@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1geelryx0p1q"]
+
+[ext_resource type="Script" uid="uid://8qrcnlwdhx8s" path="res://world.gd" id="1_aqk2v"]
+[ext_resource type="PackedScene" uid="uid://ccfkp1j5ix6ru" path="res://grid_map.tscn" id="1_f3sb7"]
+[ext_resource type="PackedScene" uid="uid://ypxueoeuvcsa" path="res://character_body_3d.tscn" id="2_fj7yv"]
+[ext_resource type="Script" uid="uid://b34s0c84cdsu0" path="res://character_body_3d.gd" id="3_tlwt5"]
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_aqk2v")
+
+[node name="GridMap" parent="." instance=ExtResource("1_f3sb7")]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_fj7yv")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5, 2.07002, 0.5)
+slide_on_ceiling = false
+script = ExtResource("3_tlwt5")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4, 4.63122, 4)
+projection = 1
+size = 8.039
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.523388, -0.845554, -0.105371, 0.0419975, -0.0979125, 0.994309, -0.851059, -0.524835, -0.0157351, 10, 10.3905, 10)
