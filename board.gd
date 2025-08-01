@@ -1,9 +1,10 @@
 extends Node3D
-@onready var player = $Player  # Adjust if player is deeper in the tree
+@onready var player = $Player  
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player.set_grid_position(Vector3i(-1, 1, -1))  # Start position
-
+	
 func _unhandled_input(event):
 	if event is InputEventKey and event.pressed:
 		print(player.grid_position)

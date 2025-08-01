@@ -11,7 +11,6 @@ func set_grid_position(pos: Vector3i):
 	)
 
 func move_in_direction(delta: Vector3i):
-	
 	set_grid_position(grid_position + delta)
 	
 # Called when the node enters the scene tree for the first time.
