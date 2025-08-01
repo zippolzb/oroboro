@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bl8t6k4hcwyrr"]
+
+[ext_resource type="Script" uid="uid://dkngfeuo0neo1" path="res://token.gd" id="1_xxgf6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_y4f30"]
+size = Vector3(0.1, 5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xxgf6"]
+size = Vector3(1, 5, 10)
+
+[node name="Wall" type="Node3D"]
+script = ExtResource("1_xxgf6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0)
+mesh = SubResource("BoxMesh_y4f30")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0, 0)
+shape = SubResource("BoxShape3D_xxgf6")
