@@ -15,6 +15,10 @@ run/main_scene="uid://b1geelryx0p1q"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=648
+
 [input]
 
 move_up={
