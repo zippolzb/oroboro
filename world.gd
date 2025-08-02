@@ -1,18 +1,19 @@
 extends Node3D
 @onready var player = $CharacterBody3D
 
-@onready var actionDict = {0: 'Mover', 1:'Interactuar', 2: 'Hablar'}
-@onready var levelLoop = [0, 0, 0, 1, 0, 0, 0, 2]
-@onready var currentLoop = [0, 0, 0, 1, 0, 0, 0, 2]
-@onready var nextAction = currentLoop[0]
+
+@onready var action_dict = {0: 'Mover', 1:'Interactuar', 2: 'Hablar'}
+@onready var level_loop = [0, 0, 0, 1, 0, 0, 0, 2]
+@onready var current_loop = [0, 0, 0, 1, 0, 0, 0, 2]
+@onready var next_action = current_loop[0]
 
 
 func checkLoop(dir):
-	if len(currentLoop) == 0:
-		currentLoop = levelLoop.duplicate()
-	nextAction = currentLoop[0]
-	print("LOOP: " + actionDict[nextAction] + dir)
-	currentLoop.pop_front()
+	if len(current_loop) == 0:
+		current_loop = level_loop.duplicate()
+	next_action = current_loop[0]
+	print("LOOP: " + action_dict[next_action] + dir)
+	current_loop.pop_front()
 
 func _process(delta: float) -> void:
 	pass
