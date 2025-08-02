@@ -2,14 +2,14 @@ extends Control
 
 const IMAGE_SIZE = Vector2(100,100)
 @onready var level_loop = [
-	{'node':$Move1, 'state':1, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
-	{'node':$Move2, 'state':0, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
-	{'node':$Move3, 'state':0, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
-	{'node':$Interact, 'state':0, 'image':'res://test_assets/Interact.png', 'used_image':'res://test_assets/Interact_used.png'},
-	{'node':$Move4, 'state':0, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
-	{'node':$Move5, 'state':0, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
-	{'node':$Move6, 'state':0, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
-	{'node':$Speak, 'state':0, 'image':'res://test_assets/Speak.png', 'used_image':'res://test_assets/Speak_used.png'}	
+	{'node':$Move1, 'type': 0, 'state':1, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
+	{'node':$Move2, 'type': 0, 'state':0, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
+	{'node':$Move3, 'type': 0, 'state':0, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
+	{'node':$Interact, 'type': 1, 'state':0, 'image':'res://test_assets/Interact.png', 'used_image':'res://test_assets/Interact_used.png'},
+	{'node':$Move4, 'type': 0, 'state':0, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
+	{'node':$Move5, 'type': 0, 'state':0, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
+	{'node':$Move6, 'type': 0, 'state':0, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
+	{'node':$Speak, 'type': 2, 'state':0, 'image':'res://test_assets/Speak.png', 'used_image':'res://test_assets/Speak_used.png'}	
 ]
 @onready var loop_dict = level_loop.duplicate()
 
