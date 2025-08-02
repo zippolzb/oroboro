@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfspyl17484ll"]
-
-[ext_resource type="PackedScene" uid="uid://bj48rqhk5jkmo" path="res://basic_tile.tscn" id="1_y7q6w"]
-
-[node name="Tiles" type="Node3D"]
-
-[node name="StaticBody3D" parent="." instance=ExtResource("1_y7q6w")]
