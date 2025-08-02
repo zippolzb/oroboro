@@ -6,6 +6,9 @@ var grid_position := Vector3(0, 0, 0)
 @export var cell_size := 1.0
 var normalLoop = [0, 0, 0, 1, 0, 0, 0, 2]
 var nextAction = []
+@onready var level = get_parent()
+@onready var gui = get_parent().get_node('GUI')
+
 
 func set_grid_position(pos: Vector3):
 	grid_position.x = pos.x
@@ -26,20 +29,12 @@ func check_next_action():
 	return nextAction[0]
 	print(nextAction)
 
-func move(command):
-	print("move " + command)
-	var current_action = nextAction.pop_front()
-	return current_action
-func action(command):
-	print("action " + command)
-	nextAction.pop_front()
-	var current_action = nextAction.pop_front()
-	return current_action
-func speak(command):
-	print("speak " + command)
-	nextAction.pop_front()
-	var current_action = nextAction.pop_front()
-	return current_action
+#func move(dir):
+	#level.checkLoop(dir)
+#func action(dir):
+	#level.checkLoop(dir)
+#func speak(dir):
+	#level.checkLoop(dir)
 
 func _physics_process(delta: float) -> void:
 	var velocity = Vector3.ZERO
@@ -50,40 +45,20 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("move_rigth"):
 		velocity.x += speed
-		var nextAction = check_next_action()
-		if nextAction == 0:
-			var current_action = move("right")
-		elif nextAction == 1:
-			var current_action =  action("right")
-		elif nextAction == 2:
-			var current_action = speak("right")
+		level.checkLoop('R')
+		gui.move_loop()
 	if Input.is_action_just_pressed("move_left"):
 		velocity.x -= speed
-		var nextAction = check_next_action()
-		if nextAction == 0:
-			move("left")
-		elif nextAction == 1:
-			action("left")
-		elif nextAction == 2:
-			speak("left")
+		level.checkLoop('L')
+		gui.move_loop()
 	if Input.is_action_just_pressed("move_up"):
 		velocity.z -= speed
-		var nextAction = check_next_action()
-		if nextAction == 0:
-			move("up")
-		elif nextAction == 1:
-			action("up")
-		elif nextAction == 2:
-			speak("up")
+		level.checkLoop('U')
+		gui.move_loop()
 	if Input.is_action_just_pressed("move_down"):
 		velocity.z += speed
-		var nextAction = check_next_action()
-		if nextAction == 0:
-			move("down")
-		elif nextAction == 1:
-			action("down")
-		elif nextAction == 2:
-			speak("down")
+		level.checkLoop('D')
+		gui.move_loop()
 		
 	
 	if global_position.x > 6.5:

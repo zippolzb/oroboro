@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1geelryx0p1q"]
+[gd_scene load_steps=9 format=3 uid="uid://b1geelryx0p1q"]
 
 [ext_resource type="Script" uid="uid://8qrcnlwdhx8s" path="res://world.gd" id="1_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://ccfkp1j5ix6ru" path="res://grid_map.tscn" id="1_f3sb7"]
@@ -8,16 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://l0j4yq68tkjk" path="res://skeleton.tscn" id="6_dwbse"]
 [ext_resource type="PackedScene" uid="uid://0a5hrtsar1rp" path="res://box.tscn" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://djxpnikru8qd5" path="res://object.tscn" id="8_gbfbk"]
-[ext_resource type="PackedScene" uid="uid://udw5oqijeqej" path="res://gui.tscn" id="9_ioo17"]
 
 [node name="World" type="Node3D"]
 script = ExtResource("1_aqk2v")
-
-[node name="GUI" parent="." instance=ExtResource("9_ioo17")]
-offset_left = 20.301
-offset_top = 31.9334
-offset_right = 60.301
-offset_bottom = 71.9334
 
 [node name="GridMap" parent="." instance=ExtResource("1_f3sb7")]
 mesh_library = ExtResource("3_036b0")
