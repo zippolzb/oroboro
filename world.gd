@@ -11,8 +11,8 @@ var current_loop = []
 var next_action = 0
 
 func _ready() -> void:
-	player.global_position= Vector3(0.5,0,0.5)+initial_position
-	print("starting: " + str(player.global_position))
+	player.global_position = Vector3(0.5,0,0.5) + initial_position
+	print("STARTING POSITION: " + str(player.global_position))
 	define_level_loop()
 	current_loop = level_loop.duplicate()
 	next_action = current_loop[0]
@@ -28,8 +28,8 @@ func checkLoop(dir):
 	if len(current_loop) == 0:
 		current_loop = level_loop.duplicate()
 	next_action = current_loop[0]
-	print("LOOP: " + action_dict[next_action] + dir)
 	current_loop.pop_front()
-
+	return action_dict[next_action] + dir
+	
 func _process(delta: float) -> void:
 	pass

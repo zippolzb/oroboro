@@ -23,6 +23,7 @@ texture = ExtResource("2_cor1f")
 expand_mode = 1
 
 [node name="Move1" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -32,6 +33,7 @@ texture = ExtResource("1_q8o8l")
 expand_mode = 1
 
 [node name="Speak" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -41,6 +43,7 @@ texture = ExtResource("3_u77ya")
 expand_mode = 1
 
 [node name="Move2" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -50,6 +53,7 @@ texture = ExtResource("1_q8o8l")
 expand_mode = 1
 
 [node name="Move3" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -59,6 +63,7 @@ texture = ExtResource("1_q8o8l")
 expand_mode = 1
 
 [node name="Move4" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -68,6 +73,7 @@ texture = ExtResource("1_q8o8l")
 expand_mode = 1
 
 [node name="Move5" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -77,6 +83,7 @@ texture = ExtResource("1_q8o8l")
 expand_mode = 1
 
 [node name="Move6" type="MarginContainer" parent="."]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 

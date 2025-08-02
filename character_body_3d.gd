@@ -22,12 +22,12 @@ func set_grid_position(pos: Vector3):
 func move_in_direction(delta: Vector3):
 	set_grid_position(grid_position + delta)
 
-func check_next_action():
-	print(nextAction)
-	if nextAction == []: 
-		nextAction = normalLoop.duplicate()
-	return nextAction[0]
-	print(nextAction)
+#func check_next_action():
+	#print(nextAction)
+	#if nextAction == []: 
+		#nextAction = normalLoop.duplicate()
+	#return nextAction[0]
+	#print(nextAction)
 
 #func move(dir):
 	#level.checkLoop(dir)
@@ -45,19 +45,23 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_just_pressed("move_rigth"):
 		velocity.x += speed
-		level.checkLoop('R')
+		var action = level.checkLoop('R')
+		print("LOOP: " + action)
 		gui.move_loop()
 	if Input.is_action_just_pressed("move_left"):
 		velocity.x -= speed
-		level.checkLoop('L')
+		var action = level.checkLoop('L')
+		print("LOOP: " + action)
 		gui.move_loop()
 	if Input.is_action_just_pressed("move_up"):
 		velocity.z -= speed
-		level.checkLoop('U')
+		var action = level.checkLoop('U')
+		print("LOOP: " + action)
 		gui.move_loop()
 	if Input.is_action_just_pressed("move_down"):
 		velocity.z += speed
-		level.checkLoop('D')
+		var action = level.checkLoop('D')
+		print("LOOP: " + action)
 		gui.move_loop()
 		
 	
