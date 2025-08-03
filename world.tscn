@@ -36,7 +36,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.5, -0.75, 0.433013, 0, 0.5, 0.866025, -0.866025, -0.433013, 0.25, 11.8315, 16.354, 9.40061)
+transform = Transform3D(0.889467, -0.174521, 0.422364, -0.155097, 0.75408, 0.638207, -0.429877, -0.633171, 0.643661, 8.61676, 8.35478, 12.4698)
 attributes = SubResource("CameraAttributesPhysical_pkg7o")
 size = 9.944
 
@@ -100,6 +100,7 @@ stream = ExtResource("13_2o6r5")
 
 [node name="BgMusic" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("14_70uel")
+autoplay = true
 
 [node name="Esqueleto" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("15_hiqwa")
