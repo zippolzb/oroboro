@@ -29,11 +29,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.75, 0.5)
 
 [node name="FloorBlanquito" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15567, -1.19209e-07, 0.370651)
+visible = false
 mesh = ExtResource("5_565gt")
 surface_material_override/0 = SubResource("StandardMaterial3D_nno5n")
 
 [node name="FloorGrisClarito" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15567, -1.19209e-07, 0.370651)
+visible = false
 mesh = ExtResource("7_76sbf")
 surface_material_override/0 = SubResource("StandardMaterial3D_nno5n")
 

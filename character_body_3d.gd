@@ -55,9 +55,6 @@ func drop_object(mesa):
 		papeles = mesa
 	else:
 		game_over()
-	# cambiar mesh
-	# cambiar layer
-	# registrar donde esta el item
 	
 func check_victory():
 	if papeles == biblio:
@@ -139,7 +136,7 @@ func _physics_process(delta: float) -> void:
 	elif global_position.z < 1.5:
 		global_position.z = 1.5
 	
-	if collision:
+	if collision and game_over_status == false:
 		var collider = collision.get_collider()
 		var layer = collider.get_collision_layer()
 		#print(str(Time.get_datetime_dict_from_system()) + str(layer))
@@ -171,8 +168,6 @@ func _physics_process(delta: float) -> void:
 			elif layer == 3:
 				if is_safe_to_act == false:
 					game_over()
-				else:
-					pass
 			else: 
 				game_over()
 		if action == 'Hablar':
