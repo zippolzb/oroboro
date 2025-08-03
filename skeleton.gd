@@ -2,6 +2,7 @@ extends CharacterBody3D
 var grid_position := Vector3(0, 0, 0)
 var dir = ''
 var speed = 18900
+@onready var esqueleto_sound = $"../../Sounds/Esqueleto"
 
 func hablar():
 	print("SOY UN ESQUELETO")
@@ -17,7 +18,10 @@ func set_grid_position(pos: Vector3):
 	)
 	
 func mover(direccion):
+	esqueleto_sound.play()
 	dir = direccion
+	
+	
 	
 func _physics_process(delta: float) -> void:
 	var velocity = Vector3.ZERO

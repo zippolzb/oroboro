@@ -4,6 +4,7 @@ extends Node3D
 @onready var initial_position = Vector3(5,1.25,6)
 @onready var papeles = $Mesas/Mesa5
 @onready var biblio = $Mesas/Mesa6
+@onready var bg_sound = $Sounds/BgMusic
 
 @onready var action_dict = {0: 'Mover', 1:'Interactuar', 2: 'Hablar'}
 #@onready var level_loop = [0, 0, 0, 1, 0, 0, 0, 2]

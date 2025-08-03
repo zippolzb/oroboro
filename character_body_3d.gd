@@ -11,7 +11,14 @@ var direccion = 'UP'
 @onready var action = ''
 @onready var is_safe_to_act = false
 @onready var is_safe_to_talk = false
+@onready var game_over_status = false
 @onready var victory_node = $"../Sounds/Victory_Sound"
+@onready var pasitos_sound = $"../Sounds/Pasitos"
+@onready var agarra_sound = $"../Sounds/Agarra"
+@onready var suelta_sound = $"../Sounds/Suelta"
+@onready var talk_sound = $"../Sounds/Talk"
+@onready var game_over_sound = $"../Sounds/GameOver"
+@onready var bg_sound = $"../Sounds/BgMusic"
 
 func set_grid_position(pos: Vector3):
 	grid_position.x = pos.x
@@ -29,7 +36,7 @@ func get_object():
 	if papeles != $".":
 		# cambiar mesh a mesa sin objeto
 		papeles.get_child(1).visible = false
-		print(papeles.get_child(1))
+		agarra_sound.play()
 		# cambiar la layer a mesa sin objeto
 		papeles.collision_layer = 5 
 		# pasar el objeto al player
@@ -41,6 +48,7 @@ func drop_object(mesa):
 	if papeles == $".":
 		# cambiar mesh a mesa con objeto
 		mesa.get_child(1).visible = true
+		suelta_sound.play()
 		# cambiar la layer a mesa con objeto
 		mesa.collision_layer = 15
 		#pasar los papeles a la mesa
@@ -64,6 +72,9 @@ func check_victory():
 
 func game_over():
 	print("GAME OVER")
+	game_over_status = true
+	game_over_sound.play()
+	await get_tree().create_timer(2.0).timeout
 	get_tree().reload_current_scene()
 	
 func _physics_process(delta: float) -> void:
@@ -74,44 +85,49 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0
 	
 	var last_pos = global_position
-	if Input.is_action_just_pressed("reset"):
-		get_tree().reload_current_scene()
-	if Input.is_action_just_pressed("move_rigth"):
-		is_safe_to_act = false
-		is_safe_to_talk = false
-		position.x += 1
-		position.y += 1
-		#velocity.x += speed
-		direccion = 'R'
-		action = level.checkLoop('R')
-		gui.move_loop()
-	if Input.is_action_just_pressed("move_left"):
-		is_safe_to_act = false
-		is_safe_to_talk = false
-		position.y += 0.5
-		direccion = 'L'
-		position.x -= 1
-		#velocity.x -= speed
-		action = level.checkLoop('L')
-		gui.move_loop()
-	if Input.is_action_just_pressed("move_up"):
-		is_safe_to_act = false
-		is_safe_to_talk = false
-		position.y += 0.5
-		direccion = 'U'
-		position.z -= 1
-		#velocity.z -= speed
-		action = level.checkLoop('U')
-		gui.move_loop()
-	if Input.is_action_just_pressed("move_down"):
-		is_safe_to_act = false
-		is_safe_to_talk = false
-		position.y += 0.5
-		direccion = 'D'
-		position.z += 1
-		#velocity.z += speed
-		action = level.checkLoop('D')
-		gui.move_loop()
+	if game_over_status == false:
+		if Input.is_action_just_pressed("reset"):
+			get_tree().reload_current_scene()
+		if Input.is_action_just_pressed("move_rigth"):
+			is_safe_to_act = false
+			is_safe_to_talk = false
+			position.x += 1
+			position.y += 1
+			direccion = 'R'
+			action = level.checkLoop('R')
+			if action == "Mover":
+				pasitos_sound.play()
+			gui.move_loop()
+		if Input.is_action_just_pressed("move_left"):
+			is_safe_to_act = false
+			is_safe_to_talk = false
+			position.y += 0.5
+			direccion = 'L'
+			position.x -= 1
+			action = level.checkLoop('L')
+			if action == "Mover":
+				pasitos_sound.play()
+			gui.move_loop()
+		if Input.is_action_just_pressed("move_up"):
+			is_safe_to_act = false
+			is_safe_to_talk = false
+			position.y += 0.5
+			direccion = 'U'
+			position.z -= 1
+			action = level.checkLoop('U')
+			if action == "Mover":
+				pasitos_sound.play()
+			gui.move_loop()
+		if Input.is_action_just_pressed("move_down"):
+			is_safe_to_act = false
+			is_safe_to_talk = false
+			position.y += 0.5
+			direccion = 'D'
+			position.z += 1
+			action = level.checkLoop('D')
+			if action == "Mover":
+				pasitos_sound.play()
+			gui.move_loop()
 	
 	var collision = move_and_collide(velocity * delta)
 	if global_position.x > 6.5:
@@ -161,6 +177,8 @@ func _physics_process(delta: float) -> void:
 				game_over()
 		if action == 'Hablar':
 			if layer == 7:
+				talk_sound.play()
+				
 				is_safe_to_talk = true
 				set_grid_position(last_pos+Vector3(0,0,0))
 				collision.get_collider().mover(direccion)
