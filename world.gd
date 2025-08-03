@@ -1,19 +1,41 @@
 extends Node3D
 @onready var player = $CharacterBody3D
+@onready var gui = $GUI
+@onready var initial_position = Vector3(5,1.25,6)
+@onready var papeles = $Mesas/Mesa5
+@onready var biblio = $Mesas/Mesa6
 
+@onready var action_dict = {0: 'Mover', 1:'Interactuar', 2: 'Hablar'}
+#@onready var level_loop = [0, 0, 0, 1, 0, 0, 0, 2]
+var level_loop = []
+var current_loop = []
+var next_action = 0
 
-#func _unhandled_input(event):
-	#if event is InputEventKey and event.pressed:
-		#print(player.global_position)
-		#if event.keycode == KEY_W:
-			#player.move_in_direction(Vector3i(0, 0, -1))
-		#if event.keycode == KEY_S:
-			#player.move_in_direction(Vector3i(0, 0, 1))
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	player.global_position= Vector3(5.5, 2, 6.5)
-	print("starting: " + str(player.global_position)) # Replace with function body.
+	player.global_position = Vector3(0.5,0,0.5) + initial_position
+	define_level_loop()
+	current_loop = level_loop.duplicate()
+	next_action = current_loop[0]
+	define_item_position()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func define_item_position():
+	var mesh_libro = papeles.get_child(1)
+	mesh_libro.visible = true
+	var mesh_biblio_biblio = biblio.get_child(3)
+	var mesh_biblio_mesa = biblio.get_child(0)
+	mesh_biblio_biblio.visible = true
+	mesh_biblio_mesa.visible = false
+	
+func define_level_loop():
+	for item in gui.level_loop:
+		level_loop.append(item.type)
+
+func checkLoop(dir):
+	if len(current_loop) == 0:
+		current_loop = level_loop.duplicate()
+	next_action = current_loop[0]
+	current_loop.pop_front()
+	return next_action
+	
 func _process(delta: float) -> void:
 	pass

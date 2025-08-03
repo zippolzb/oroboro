@@ -1,16 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://kcqcn60extbj"]
+[gd_scene load_steps=10 format=3 uid="uid://kcqcn60extbj"]
 
 [ext_resource type="PackedScene" uid="uid://mw4c4026k6y4" path="res://tile_a.tscn" id="1_qxp2w"]
 [ext_resource type="PackedScene" uid="uid://b13jkfdlscgxn" path="res://tile_b.tscn" id="2_cqhtw"]
 [ext_resource type="PackedScene" uid="uid://bt65kebrl8w56" path="res://tile_c.tscn" id="3_cqhtw"]
+[ext_resource type="PackedScene" uid="uid://de5yficpdhedj" path="res://tile_3.tscn" id="4_egano"]
+[ext_resource type="ArrayMesh" uid="uid://pvwa7r5uhpvu" path="res://Assets_Final/FloorBlanquito.obj" id="5_565gt"]
+[ext_resource type="Texture2D" uid="uid://cjtp0escbriir" path="res://Assets_Final/Tileset_Texture.png" id="6_ay7de"]
+[ext_resource type="ArrayMesh" uid="uid://bt4t5uidijiam" path="res://Assets_Final/FloorGrisClarito.obj" id="7_76sbf"]
+[ext_resource type="ArrayMesh" uid="uid://2a2n65tl6yn5" path="res://Assets_Final/FloorGrisOscuro.obj" id="8_of27f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nno5n"]
+albedo_texture = ExtResource("6_ay7de")
 
 [node name="TileList" type="Node3D"]
 
 [node name="TileA" parent="." instance=ExtResource("1_qxp2w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.05, 0.5)
+layers = 0
 
 [node name="TileB" parent="." instance=ExtResource("2_cqhtw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.05, 0.5)
+layers = 0
 
 [node name="TileC" parent="." instance=ExtResource("3_cqhtw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0.75, 0.5)
+
+[node name="Tile3" parent="." instance=ExtResource("4_egano")]
+
+[node name="FloorBlanquito" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15567, -1.19209e-07, 0.370651)
+mesh = ExtResource("5_565gt")
+surface_material_override/0 = SubResource("StandardMaterial3D_nno5n")
+
+[node name="FloorGrisClarito" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15567, -1.19209e-07, 0.370651)
+mesh = ExtResource("7_76sbf")
+surface_material_override/0 = SubResource("StandardMaterial3D_nno5n")
+
+[node name="FloorGrisOscuro" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15567, -1.19209e-07, 0.370651)
+mesh = ExtResource("8_of27f")
+surface_material_override/0 = SubResource("StandardMaterial3D_nno5n")

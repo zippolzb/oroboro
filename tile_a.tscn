@@ -1,18 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://mw4c4026k6y4"]
+[gd_scene load_steps=5 format=3 uid="uid://mw4c4026k6y4"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ugg8t"]
-albedo_color = Color(0.422557, 0.576356, 0.280899, 1)
+[ext_resource type="ArrayMesh" uid="uid://pvwa7r5uhpvu" path="res://Assets_Final/FloorBlanquito.obj" id="1_gm7my"]
+[ext_resource type="Texture2D" uid="uid://cjtp0escbriir" path="res://Assets_Final/Tileset_Texture.png" id="2_wp5td"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_wx5kh"]
-material = SubResource("StandardMaterial3D_ugg8t")
-size = Vector3(1, 0.1, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4ul0"]
+albedo_texture = ExtResource("2_wp5td")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gm7my"]
 points = PackedVector3Array(-0.5, -0.05, -0.5, -0.5, 0.05, -0.5, 0.5, -0.05, -0.5, -0.5, -0.05, 0.5, -0.5, 0.05, 0.5, 0.5, 0.05, -0.5, 0.5, -0.05, 0.5, 0.5, 0.05, 0.5)
 
 [node name="TileA" type="MeshInstance3D"]
 layers = 3
-mesh = SubResource("BoxMesh_wx5kh")
+mesh = ExtResource("1_gm7my")
+surface_material_override/0 = SubResource("StandardMaterial3D_a4ul0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

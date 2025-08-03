@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://udw5oqijeqej"]
+
+[ext_resource type="Script" uid="uid://che3i0asbel2p" path="res://gui.gd" id="1_cor1f"]
+[ext_resource type="Texture2D" uid="uid://dh5pwf05ubrow" path="res://test_assets/move.PNG" id="1_q8o8l"]
+[ext_resource type="Texture2D" uid="uid://di71qn4fosmuu" path="res://test_assets/Interact.PNG" id="2_cor1f"]
+[ext_resource type="Texture2D" uid="uid://dymeirflputi6" path="res://test_assets/speak.PNG" id="3_u77ya"]
+
+[node name="GUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_cor1f")
+
+[node name="Interact" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Interact"]
+layout_mode = 2
+texture = ExtResource("2_cor1f")
+expand_mode = 1
+
+[node name="Move1" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Move1"]
+layout_mode = 2
+texture = ExtResource("1_q8o8l")
+expand_mode = 1
+
+[node name="Speak" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Speak"]
+layout_mode = 2
+texture = ExtResource("3_u77ya")
+expand_mode = 1
+
+[node name="Move2" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Move2"]
+layout_mode = 2
+texture = ExtResource("1_q8o8l")
+expand_mode = 1
+
+[node name="Move3" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Move3"]
+layout_mode = 2
+texture = ExtResource("1_q8o8l")
+expand_mode = 1
+
+[node name="Move4" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Move4"]
+layout_mode = 2
+texture = ExtResource("1_q8o8l")
+expand_mode = 1
+
+[node name="Move5" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Move5"]
+layout_mode = 2
+texture = ExtResource("1_q8o8l")
+expand_mode = 1
+
+[node name="Move6" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Move6"]
+layout_mode = 2
+texture = ExtResource("1_q8o8l")
+expand_mode = 1

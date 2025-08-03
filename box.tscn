@@ -9,8 +9,7 @@ metallic_specular = 1.0
 material = SubResource("StandardMaterial3D_rnlth")
 size = Vector3(1, 1.5, 1)
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g2tbl"]
-points = PackedVector3Array(-0.5, -0.75, -0.5, -0.5, -0.75, 0.5, -0.5, 0.75, -0.5, 0.5, -0.75, -0.5, 0.5, -0.75, 0.5, -0.5, 0.75, 0.5, 0.5, 0.75, -0.5, 0.5, 0.75, 0.5)
+[sub_resource type="BoxShape3D" id="BoxShape3D_oyhfb"]
 
 [node name="Box" type="RigidBody3D"]
 
@@ -18,4 +17,4 @@ points = PackedVector3Array(-0.5, -0.75, -0.5, -0.5, -0.75, 0.5, -0.5, 0.75, -0.
 mesh = SubResource("BoxMesh_oyhfb")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("ConvexPolygonShape3D_g2tbl")
+shape = SubResource("BoxShape3D_oyhfb")
