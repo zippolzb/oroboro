@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://byj1pd2axjpmt"
-path="res://.godot/imported/Interact_Used.png-5f775c1f9520cbff123cc57433124e09.ctex"
+path="res://.godot/imported/Interact_used.png-5ff7011f1d97b0447677b70cdc6234e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://test_assets/Interact_Used.png"
-dest_files=["res://.godot/imported/Interact_Used.png-5f775c1f9520cbff123cc57433124e09.ctex"]
+source_file="res://test_assets/Interact_used.png"
+dest_files=["res://.godot/imported/Interact_used.png-5ff7011f1d97b0447677b70cdc6234e9.ctex"]
 
 [params]
 

@@ -23,8 +23,9 @@ collision_layer = 5
 mesh = ExtResource("1_0rx7m")
 surface_material_override/0 = SubResource("StandardMaterial3D_0twqh")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+[node name="Libro" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.521704, 0)
+visible = false
 mesh = ExtResource("3_ym3nw")
 surface_material_override/0 = SubResource("StandardMaterial3D_60ub5")
 

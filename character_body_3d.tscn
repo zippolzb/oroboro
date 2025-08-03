@@ -5,6 +5,7 @@
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bu0v1"]
 height = 1.75
+radius = 0.001
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 collision_mask = 3
