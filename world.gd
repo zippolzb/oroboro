@@ -1,7 +1,7 @@
 extends Node3D
 @onready var player = $CharacterBody3D
 @onready var gui = $GUI
-@onready var initial_position = Vector3(5,2,6)
+@onready var initial_position = Vector3(5,1.25,6)
 
 
 @onready var action_dict = {0: 'Mover', 1:'Interactuar', 2: 'Hablar'}
@@ -29,7 +29,8 @@ func checkLoop(dir):
 		current_loop = level_loop.duplicate()
 	next_action = current_loop[0]
 	current_loop.pop_front()
-	return action_dict[next_action] + dir
+	print("DEVUELVE: " + next_action)
+	return next_action
 	
 func _process(delta: float) -> void:
 	pass

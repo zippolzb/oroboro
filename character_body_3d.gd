@@ -1,13 +1,14 @@
 extends CharacterBody3D
 
-var speed = 18900
 var gravity = 900
 var grid_position := Vector3(0, 0, 0)
+var direccion = 'UP'
 @export var cell_size := 1.0
-var normalLoop = [0, 0, 0, 1, 0, 0, 0, 2]
-var nextAction = []
 @onready var level = get_parent()
 @onready var gui = get_parent().get_node('GUI')
+@onready var papeles = $"../Mesas/Mesa5"
+@onready var action = ''
+@onready var is_safe = false
 
 
 func set_grid_position(pos: Vector3):
@@ -22,49 +23,82 @@ func set_grid_position(pos: Vector3):
 func move_in_direction(delta: Vector3):
 	set_grid_position(grid_position + delta)
 
-#func check_next_action():
-	#print(nextAction)
-	#if nextAction == []: 
-		#nextAction = normalLoop.duplicate()
-	#return nextAction[0]
-	#print(nextAction)
+func get_object():
+	if papeles != $".":
+		papeles.collision_layer = 5 
+		papeles = $"."
+	else:
+		game_over()
+	# cambiar mesh a mesa sin objeto
+	# cambiar layer a mesa sin objet
+	# agregar el objeto al inventario
 
-#func move(dir):
-	#level.checkLoop(dir)
-#func action(dir):
-	#level.checkLoop(dir)
-#func speak(dir):
-	#level.checkLoop(dir)
+func drop_object(mesa):
+	if papeles == $".":
+		mesa.collision_layer = 15
+		papeles = mesa
+	else:
+		game_over()
+	# cambiar mesh
+	# cambiar layer
+	# registrar donde esta el item
+	
+func check_victory():
+	pass
 
+#func speak_to():
+	##check_monster_type() -> monster_type
+	##ejecutar_accion_monstruo(monster_type)
+	#print("objeto agarrado")
+
+func game_over():
+	print("GAME OVER")
+	get_tree().reload_current_scene()
+	
 func _physics_process(delta: float) -> void:
 	var velocity = Vector3.ZERO
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	else:
 		velocity.y = 0
-		
+	
+	var last_pos = global_position
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
 	if Input.is_action_just_pressed("move_rigth"):
-		velocity.x += speed
-		var action = level.checkLoop('R')
-		print("LOOP: " + action)
+		is_safe = false
+		position.x += 1
+		position.y += 1
+		#velocity.x += speed
+		direccion = 'R'
+		action = level.checkLoop('R')
 		gui.move_loop()
 	if Input.is_action_just_pressed("move_left"):
-		velocity.x -= speed
-		var action = level.checkLoop('L')
-		print("LOOP: " + action)
+		is_safe = false
+		position.y += 0.5
+		direccion = 'L'
+		position.x -= 1
+		#velocity.x -= speed
+		action = level.checkLoop('L')
 		gui.move_loop()
 	if Input.is_action_just_pressed("move_up"):
-		velocity.z -= speed
-		var action = level.checkLoop('U')
-		print("LOOP: " + action)
+		is_safe = false
+		position.y += 0.5
+		direccion = 'U'
+		position.z -= 1
+		#velocity.z -= speed
+		action = level.checkLoop('U')
 		gui.move_loop()
 	if Input.is_action_just_pressed("move_down"):
-		velocity.z += speed
-		var action = level.checkLoop('D')
-		print("LOOP: " + action)
+		is_safe = false
+		position.y += 0.5
+		direccion = 'D'
+		position.z += 1
+		#velocity.z += speed
+		action = level.checkLoop('D')
 		gui.move_loop()
-		
 	
+	var collision = move_and_collide(velocity * delta)
 	if global_position.x > 6.5:
 		global_position.x = 6.5
 	elif global_position.x < 1.5:
@@ -74,18 +108,53 @@ func _physics_process(delta: float) -> void:
 	elif global_position.z < 1.5:
 		global_position.z = 1.5
 	
-	var collision = move_and_collide(velocity * delta)
-	
 	if collision:
 		var collider = collision.get_collider()
 		var layer = collider.get_collision_layer()
-		var col_dict = {'1':'Wall', '3':'Floor', '7':'Speaker', '15': 'Object'}
-		if layer == 3:
-			pass
-		else:
-			print("Hit object: ", collision.get_collider())
-			#print("Hit Layer: ", layer)
-			print("Hit object: ", col_dict[str(layer)])
+		var mask = collider.get_collision_mask()
+		var col_dict = {'1':'Wall', '3':'Floor', '5': 'Mesa_sin', '7':'Speaker', '13': 'Biblio', '15': 'Mesa_con'}
+		#if layer == 3:
+			#pass
+		#else:
+		if action == 'Mover':
+			var chocantes = [1,5,7,13,15]
+			if layer in chocantes:
+				set_grid_position(last_pos)
+				game_over()
+		if action == 'Interactuar':
+			print(collider)
+			if layer == 15:
+				print("PASE POR LOS 15")
+				is_safe = true
+				get_object()
+				set_grid_position(last_pos)
+			elif layer == 5:
+				is_safe = true
+				set_grid_position(last_pos)
+				var mesa = collision.get_collider()
+				drop_object(mesa)
+			elif layer == 13:
+				is_safe = true
+				set_grid_position(last_pos)
+				check_victory()
+			elif layer == 3:
+				if is_safe == false:
+					game_over()
+					print("GO1")
+				else:
+					pass
+			else: 
+				game_over()
+				print("GO2")
+		if action == 'Hablar':
+			if layer == 3:
+				set_grid_position(last_pos)
+			elif layer == 7:
+				set_grid_position(last_pos+Vector3(0,2,0))
+				collision.get_collider().mover(direccion)
+			else:
+				game_over()
+		#print("Hit Layer: ", layer)
 			
 		
 #func _physics_process(delta: float) -> void:
@@ -121,5 +190,3 @@ func _physics_process(delta: float) -> void:
 		#velocity.y -= gravity * delta
 	#else:
 		#velocity.y = 0
-	#move_and_slide()
-	
