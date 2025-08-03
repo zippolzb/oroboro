@@ -1,23 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx5gsyc0i2hxm"]
+[gd_scene load_steps=9 format=3 uid="uid://bx5gsyc0i2hxm"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6ghg"]
-albedo_color = Color(0.144063, 0.144063, 0.144063, 1)
+[ext_resource type="ArrayMesh" uid="uid://bd2xcwmpc5no8" path="res://Assets_Final/Table 1x1.obj" id="1_0rx7m"]
+[ext_resource type="Texture2D" uid="uid://cbwauok2ua57e" path="res://Assets_Final/Table 1x1_GMTK2025 - TEXTURE - COLORS ALBEDO.png" id="2_60ub5"]
+[ext_resource type="ArrayMesh" uid="uid://dphkaokqn1xbp" path="res://Assets_Final/Binder.obj" id="3_ym3nw"]
+[ext_resource type="ArrayMesh" uid="uid://dmgpnhahgcq07" path="res://Assets_Final/FileCabinet.obj" id="4_ym3nw"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_0rx7m"]
-material = SubResource("StandardMaterial3D_k6ghg")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0twqh"]
+albedo_texture = ExtResource("2_60ub5")
 
-[sub_resource type="SphereMesh" id="SphereMesh_k6ghg"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60ub5"]
+albedo_texture = ExtResource("2_60ub5")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0rx7m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7itov"]
+albedo_texture = ExtResource("2_60ub5")
 
 [node name="Mesa" type="RigidBody3D"]
 collision_layer = 5
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_0rx7m")
+mesh = ExtResource("1_0rx7m")
+surface_material_override/0 = SubResource("StandardMaterial3D_0twqh")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-mesh = SubResource("SphereMesh_k6ghg")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.521704, 0)
+mesh = ExtResource("3_ym3nw")
+surface_material_override/0 = SubResource("StandardMaterial3D_60ub5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49979, 0)
 shape = SubResource("BoxShape3D_0rx7m")
+
+[node name="FileCabinet" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.52728, 0, 0, 0, 1.52728, 0, 0, 0, 1, -0.00387514, 0, -0.0752748)
+visible = false
+mesh = ExtResource("4_ym3nw")
+surface_material_override/0 = SubResource("StandardMaterial3D_7itov")

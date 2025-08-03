@@ -1,16 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ypxueoeuvcsa"]
+[gd_scene load_steps=4 format=3 uid="uid://ypxueoeuvcsa"]
 
 [ext_resource type="Script" uid="uid://b34s0c84cdsu0" path="res://character_body_3d.gd" id="1_iwpo4"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bu0v1"]
-albedo_color = Color(0.119073, 0.234261, 0.95212, 1)
-metallic = 1.0
-metallic_specular = 0.0
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_iwpo4"]
-material = SubResource("StandardMaterial3D_bu0v1")
-top_radius = 0.25
-height = 1.5
+[ext_resource type="PackedScene" uid="uid://cnmp23d4ymjyl" path="res://Assets_Final/Ann_Xiety.glb" id="2_fb3t6"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bu0v1"]
 height = 1.75
@@ -19,9 +10,9 @@ height = 1.75
 collision_mask = 3
 script = ExtResource("1_iwpo4")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CylinderMesh_iwpo4")
-
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.87525, 0)
 shape = SubResource("CylinderShape3D_bu0v1")
+
+[node name="Ann_Xiety" parent="." instance=ExtResource("2_fb3t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00606549, 0, -0.0205097)

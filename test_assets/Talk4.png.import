@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4i5pgy6ukld1"
-path="res://.godot/imported/Speak.png-fddaba844784e4aca333365fde80cf2b.ctex"
+uid="uid://ljtvm2w874vl"
+path="res://.godot/imported/Talk4.png-6e5ae5d80b7d4e7afc36ebb064bbbffe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://test_assets/Speak.png"
-dest_files=["res://.godot/imported/Speak.png-fddaba844784e4aca333365fde80cf2b.ctex"]
+source_file="res://test_assets/Talk4.png"
+dest_files=["res://.godot/imported/Talk4.png-6e5ae5d80b7d4e7afc36ebb064bbbffe.ctex"]
 
 [params]
 

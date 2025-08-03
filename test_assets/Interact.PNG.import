@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di71qn4fosmuu"
-path="res://.godot/imported/Interact.PNG-5a45cebbea18afa3eff7e910280e337b.ctex"
+uid="uid://dnvpispl072fb"
+path="res://.godot/imported/Interact.png-965792815678939fa6c57fe1682aa5ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://test_assets/Interact.PNG"
-dest_files=["res://.godot/imported/Interact.PNG-5a45cebbea18afa3eff7e910280e337b.ctex"]
+source_file="res://test_assets/Interact.png"
+dest_files=["res://.godot/imported/Interact.png-965792815678939fa6c57fe1682aa5ce.ctex"]
 
 [params]
 
