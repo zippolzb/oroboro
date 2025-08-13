@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://l3hcglbc3u2j"]
+
+[ext_resource type="PackedScene" uid="uid://bdpicbnm2gup4" path="res://Assets_Final/Skeleton.glb" id="1_2nit7"]
+[ext_resource type="Texture2D" uid="uid://cpv7n1fwpdryv" path="res://Assets_Final/Skeleton_GMTK2025 - TEXTURE - COLORS ALBEDO.png" id="2_4v8xj"]
+[ext_resource type="Material" uid="uid://c0hmuay1gj7io" path="res://Outline.tres" id="3_4v8xj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t13dh"]
+next_pass = ExtResource("3_4v8xj")
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("2_4v8xj")
+
+[node name="Skeleton" instance=ExtResource("1_2nit7")]
+
+[node name="Character_Skeleton" parent="Skeleton_GameRig_ROOT/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_t13dh")

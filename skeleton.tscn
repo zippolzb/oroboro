@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://l0j4yq68tkjk"]
 
 [ext_resource type="Script" uid="uid://b3px35f4r6ond" path="res://skeleton.gd" id="1_crlql"]
-[ext_resource type="PackedScene" uid="uid://bdpicbnm2gup4" path="res://Assets_Final/Skeleton.glb" id="2_plk42"]
+[ext_resource type="PackedScene" uid="uid://l3hcglbc3u2j" path="res://skeleton_child.tscn" id="2_plk42"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_plk42"]
 radius = 0.35
@@ -16,4 +16,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27199, 0)
 shape = SubResource("CapsuleShape3D_plk42")
 
 [node name="Skeleton" parent="." instance=ExtResource("2_plk42")]
-transform = Transform3D(1, 0, 0, 0, 1.26515, 0, 0, 0, 1, 0.00484982, 2.38419e-07, -2.14577e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0151806, 0.00288156, -0.0114047)
