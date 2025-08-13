@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b1geelryx0p1q"]
+[gd_scene load_steps=18 format=3 uid="uid://b1geelryx0p1q"]
 
 [ext_resource type="Script" uid="uid://banltpcrekbyv" path="res://Testing_level/world-test.gd" id="1_dg8ay"]
 [ext_resource type="PackedScene" uid="uid://udw5oqijeqej" path="res://gui.tscn" id="2_a3ikf"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://bb3bqf54ljv7w" path="res://mobs/vampi.gd" id="13_4dfx0"]
 [ext_resource type="AudioStream" uid="uid://bh6xxgiuevuhn" path="res://sfx/bg_music.mp3" id="13_j5wr6"]
 [ext_resource type="PackedScene" uid="uid://bkykxix32rfys" path="res://mobs/vampi.tscn" id="13_r7sxo"]
+[ext_resource type="AudioStream" uid="uid://drd2ikdrc0yus" path="res://sfx/talk.wav" id="14_fwe13"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_pkg7o"]
 
@@ -161,6 +162,9 @@ stream = ExtResource("11_4dfx0")
 [node name="BgMusic" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("13_j5wr6")
 autoplay = true
+
+[node name="Talk" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("14_fwe13")
 
 [node name="Mobs" type="Node" parent="."]
 

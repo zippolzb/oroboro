@@ -1,6 +1,6 @@
 extends CharacterBody3D
 var dir = ''
-var speed = 18900
+var speed = 8
 @onready var esqueleto_sound = $Node/Esqueleto
 
 func hablar():

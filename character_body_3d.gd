@@ -117,6 +117,7 @@ func _physics_process(delta: float) -> void:
 			position.y += 1
 			direccion = 'R'
 			action = level.checkLoop('R')
+			gui.move_loop()
 			if action == "Mover":
 				pasitos_sound.play()
 		if Input.is_action_just_pressed("move_left"):
@@ -126,6 +127,7 @@ func _physics_process(delta: float) -> void:
 			position.y += 0.5
 			direccion = 'L'
 			action = level.checkLoop('L')
+			gui.move_loop()
 			if action == "Mover":
 				pasitos_sound.play()
 		if Input.is_action_just_pressed("move_up"):
@@ -135,6 +137,7 @@ func _physics_process(delta: float) -> void:
 			position.y += 0.5
 			direccion = 'U'
 			action = level.checkLoop('U')
+			gui.move_loop()
 			if action == "Mover":
 				pasitos_sound.play()
 		if Input.is_action_just_pressed("move_down"):
@@ -144,6 +147,7 @@ func _physics_process(delta: float) -> void:
 			position.y += 0.5
 			direccion = 'D'
 			action = level.checkLoop('D')
+			gui.move_loop()
 			if action == "Mover":
 				pasitos_sound.play()
 		

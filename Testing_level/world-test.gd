@@ -20,7 +20,7 @@ extends Node3D
 # DEFINING LOOP
 @onready var level_loop_dict = [
 	{'node':$GUI/Interact, 'type': 'Interactuar', 'image':'res://gui/interact.png', 'used_image':'res://gui/interact_used.png'},
-	#{'node':$GUI/Move, 'type': 'Mover', 'image':'res://gui/move.png', 'used_image':'res://gui/move_used.png'},
+	{'node':$GUI/Move, 'type': 'Mover', 'image':'res://gui/move.png', 'used_image':'res://gui/move_used.png'},
 	{'node':$GUI/Speak, 'type': 'Hablar', 'image':'res://gui/speak.png', 'used_image':'res://gui/speak_used.png'},
 	#{'node':$GUI/Move2, 'type': 'Mover', 'image':'res://gui/move.png', 'used_image':'res://gui/move_used.png'},
 	#{'node':$GUI/Move3, 'type': 'Mover', 'image':'res://gui/move.png', 'used_image':'res://gui/move_used.png'},
