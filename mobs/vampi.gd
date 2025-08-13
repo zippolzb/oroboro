@@ -27,7 +27,6 @@ func mover(player, direccion):
 	else:
 		print("NO JODAS!")
 
-
 func check_if_occupied(pos: Vector3):
 	var space_state = get_world_3d().direct_space_state
 	var params = PhysicsShapeQueryParameters3D.new()
