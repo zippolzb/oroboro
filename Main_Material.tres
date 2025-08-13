@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cod1k2wnxdaye"]
+
+[ext_resource type="Texture2D" uid="uid://cpv7n1fwpdryv" path="res://Assets_Final/Skeleton_GMTK2025 - TEXTURE - COLORS ALBEDO.png" id="1_gs8ee"]
+[ext_resource type="Material" uid="uid://c0hmuay1gj7io" path="res://Outline.tres" id="2_c8dae"]
+
+[resource]
+next_pass = ExtResource("2_c8dae")
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+albedo_texture = ExtResource("1_gs8ee")
