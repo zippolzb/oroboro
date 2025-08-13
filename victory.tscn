@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://bi710tormq44e"]
 
-[ext_resource type="Texture2D" uid="uid://bepkdxkm6j1hm" path="res://Assets_Final/OCD_-_VictoryAnn_Title.png" id="1_7bnjr"]
-[ext_resource type="Script" uid="uid://dvgqg1ym5v773" path="res://victory.gd" id="1_v31sk"]
-[ext_resource type="AudioStream" uid="uid://gsqn711em4lj" path="res://sounfs/victory.wav" id="3_qr7ta"]
+[ext_resource type="Texture2D" uid="uid://bqp52u1pes4ri" path="res://Assets_Final/OCD_-_VictoryAnn_Title.png" id="1_7bnjr"]
+[ext_resource type="Script" uid="uid://bwejppg43ns0j" path="res://victory.gd" id="1_v31sk"]
+[ext_resource type="AudioStream" uid="uid://rrhw6kh0vcag" path="res://sfx/victory.wav" id="3_qr7ta"]
 
 [node name="Victory" type="Control"]
 layout_mode = 3

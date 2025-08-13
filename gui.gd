@@ -1,19 +1,14 @@
 extends Control
 
 const IMAGE_SIZE = Vector2(100,100)
-@onready var level_loop = [
-	{'node':$Move1, 'type': 'Mover', 'state':1, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
-	{'node':$Move2, 'type': 'Mover', 'state':0, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
-	{'node':$Move3, 'type': 'Mover', 'state':0, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
-	{'node':$Interact, 'type': 'Interactuar', 'state':0, 'image':'res://test_assets/Interact.png', 'used_image':'res://test_assets/Interact_used.png'},
-	{'node':$Move4, 'type': 'Mover', 'state':0, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
-	{'node':$Move5, 'type': 'Mover', 'state':0, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
-	{'node':$Move6, 'type': 'Mover', 'state':0, 'image':'res://test_assets/Move.png', 'used_image':'res://test_assets/Move_used.png'},
-	{'node':$Speak, 'type': 'Hablar', 'state':0, 'image':'res://test_assets/Speak.png', 'used_image':'res://test_assets/Speak_used.png'}	
-]
-@onready var loop_dict = level_loop.duplicate()
+
+var level_loop = []
+var loop_dict = []
 
 func _ready():
+	await get_tree().process_frame
+	level_loop = get_parent().level_loop_dict
+	loop_dict = level_loop.duplicate()
 	var count = 0
 	for item in level_loop:
 		var size = 105
@@ -24,10 +19,6 @@ func _ready():
 func setup_margin_container(node: MarginContainer, x: int, y: int, size: Vector2):
 	node.size = size
 	node.position = Vector2(x, y)
-
-#func move_loop2():
-	#for item in loop_dict:
-		#if item.node
 
 func move_loop():
 	var to_change = loop_dict[0]
@@ -46,5 +37,3 @@ func _input(event: InputEvent) -> void:
 		#move_loop()
 	#if Input.is_action_just_pressed("move_rigth"):
 		#move_loop()
-
-#.node.get_node('TextureRect')

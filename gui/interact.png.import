@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqp52u1pes4ri"
-path="res://.godot/imported/OCD_-_VictoryAnn_Title.png-19149d82285d58feaee5214816de07a4.ctex"
+uid="uid://7efn4khg8cci"
+path="res://.godot/imported/interact.png-7d7bd504573672c74bf66baf721da70d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets_Final/OCD_-_VictoryAnn_Title.png"
-dest_files=["res://.godot/imported/OCD_-_VictoryAnn_Title.png-19149d82285d58feaee5214816de07a4.ctex"]
+source_file="res://gui/interact.png"
+dest_files=["res://.godot/imported/interact.png-7d7bd504573672c74bf66baf721da70d.ctex"]
 
 [params]
 

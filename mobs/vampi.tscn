@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkykxix32rfys"]
+
+[ext_resource type="Script" uid="uid://dwim0qg8kde1v" path="res://mobs/skeleton.gd" id="1_5ysy4"]
+[ext_resource type="PackedScene" uid="uid://bdpicbnm2gup4" path="res://Assets_Final/Skeleton.glb" id="2_hyyrs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ysy4"]
+albedo_color = Color(0.0999999, 0, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hyyrs"]
+material = SubResource("StandardMaterial3D_5ysy4")
+radius = 0.25
+height = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ysy4"]
+size = Vector3(0.95, 2, 0.95)
+
+[node name="Vampi" type="CharacterBody3D"]
+collision_layer = 7
+script = ExtResource("1_5ysy4")
+
+[node name="Skeleton" parent="." instance=ExtResource("2_hyyrs")]
+transform = Transform3D(1, 0, 0, 0, 1.26515, 0, 0, 0, 1, 0.00484982, 2.38419e-07, -2.14577e-05)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+custom_aabb = AABB(1, 1, 1, 1, 1, 1)
+mesh = SubResource("CapsuleMesh_hyyrs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19931, 0)
+shape = SubResource("BoxShape3D_5ysy4")

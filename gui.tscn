@@ -1,9 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://udw5oqijeqej"]
+[gd_scene load_steps=2 format=3 uid="uid://udw5oqijeqej"]
 
-[ext_resource type="Script" uid="uid://che3i0asbel2p" path="res://gui.gd" id="1_cor1f"]
-[ext_resource type="Texture2D" uid="uid://qivgrcmumdqd" path="res://test_assets/Move.png" id="1_q8o8l"]
-[ext_resource type="Texture2D" uid="uid://dnvpispl072fb" path="res://test_assets/Interact.png" id="2_cor1f"]
-[ext_resource type="Texture2D" uid="uid://c4i5pgy6ukld1" path="res://test_assets/Speak.png" id="3_u77ya"]
+[ext_resource type="Script" uid="uid://bxesqixkp05r1" path="res://gui.gd" id="1_cor1f"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -11,80 +8,3 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_cor1f")
-
-[node name="Interact" type="MarginContainer" parent="."]
-layout_mode = 0
-
-[node name="TextureRect" type="TextureRect" parent="Interact"]
-layout_mode = 2
-texture = ExtResource("2_cor1f")
-expand_mode = 1
-
-[node name="Move1" type="MarginContainer" parent="."]
-layout_mode = 0
-
-[node name="TextureRect" type="TextureRect" parent="Move1"]
-layout_mode = 2
-texture = ExtResource("1_q8o8l")
-expand_mode = 1
-
-[node name="Speak" type="MarginContainer" parent="."]
-layout_mode = 0
-
-[node name="TextureRect" type="TextureRect" parent="Speak"]
-layout_mode = 2
-texture = ExtResource("3_u77ya")
-expand_mode = 1
-
-[node name="Move2" type="MarginContainer" parent="."]
-layout_mode = 0
-
-[node name="TextureRect" type="TextureRect" parent="Move2"]
-layout_mode = 2
-texture = ExtResource("1_q8o8l")
-expand_mode = 1
-
-[node name="Move3" type="MarginContainer" parent="."]
-layout_mode = 0
-
-[node name="TextureRect" type="TextureRect" parent="Move3"]
-layout_mode = 2
-texture = ExtResource("1_q8o8l")
-expand_mode = 1
-
-[node name="Move4" type="MarginContainer" parent="."]
-layout_mode = 0
-
-[node name="TextureRect" type="TextureRect" parent="Move4"]
-layout_mode = 2
-texture = ExtResource("1_q8o8l")
-expand_mode = 1
-
-[node name="Move5" type="MarginContainer" parent="."]
-layout_mode = 0
-
-[node name="TextureRect" type="TextureRect" parent="Move5"]
-layout_mode = 2
-texture = ExtResource("1_q8o8l")
-expand_mode = 1
-
-[node name="Move6" type="MarginContainer" parent="."]
-layout_mode = 0
-
-[node name="TextureRect" type="TextureRect" parent="Move6"]
-layout_mode = 2
-texture = ExtResource("1_q8o8l")
-expand_mode = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 577.0
-offset_right = 282.0
-offset_bottom = 717.0
-
-[node name="TextEdit" type="TextEdit" parent="MarginContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 22
-text = "TAKE THE BINDER
-TO THE FILE CABINET"

@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://l0j4yq68tkjk"]
+
+[ext_resource type="Script" uid="uid://dwim0qg8kde1v" path="res://mobs/skeleton.gd" id="1_crlql"]
+[ext_resource type="PackedScene" uid="uid://bdpicbnm2gup4" path="res://Assets_Final/Skeleton.glb" id="2_plk42"]
+[ext_resource type="AudioStream" uid="uid://cb7gj4mivo5yf" path="res://sfx/esqueleto.wav" id="3_snx8a"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_plk42"]
+radius = 0.35
+height = 2.5977
+
+[node name="Skeleton" type="CharacterBody3D"]
+collision_layer = 7
+script = ExtResource("1_crlql")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.27199, 0)
+shape = SubResource("CapsuleShape3D_plk42")
+
+[node name="Skeleton" parent="." instance=ExtResource("2_plk42")]
+transform = Transform3D(1, 0, 0, 0, 1.26515, 0, 0, 0, 1, 0.00484982, 2.38419e-07, -2.14577e-05)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Esqueleto" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource("3_snx8a")
