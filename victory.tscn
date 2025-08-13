@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi710tormq44e"]
+
+[ext_resource type="Texture2D" uid="uid://bepkdxkm6j1hm" path="res://Assets_Final/OCD_-_VictoryAnn_Title.png" id="1_7bnjr"]
+[ext_resource type="Script" uid="uid://dvgqg1ym5v773" path="res://victory.gd" id="1_v31sk"]
+[ext_resource type="AudioStream" uid="uid://gsqn711em4lj" path="res://sounfs/victory.wav" id="3_qr7ta"]
+
+[node name="Victory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v31sk")
+
+[node name="Ocd-VictoryAnnTitle" type="Sprite2D" parent="."]
+position = Vector2(537, 365)
+texture = ExtResource("1_7bnjr")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_right = 1083.0
+offset_bottom = 730.0
+flat = true
+
+[node name="Victory" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qr7ta")
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

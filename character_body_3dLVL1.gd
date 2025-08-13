@@ -62,7 +62,7 @@ func check_victory():
 		victory_node.play()
 		win_status = true
 		await get_tree().create_timer(2.0).timeout
-		get_tree().change_scene_to_file("res://victory.tscn")
+		get_tree().change_scene_to_file("res://LVL2.tscn")
 		
 
 #func speak_to():

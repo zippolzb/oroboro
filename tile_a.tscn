@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://mw4c4026k6y4"]
 
 [ext_resource type="ArrayMesh" uid="uid://pvwa7r5uhpvu" path="res://Assets_Final/FloorBlanquito.obj" id="1_gm7my"]
-[ext_resource type="Texture2D" uid="uid://cjtp0escbriir" path="res://Assets_Final/Tileset_Texture.png" id="2_wp5td"]
+[ext_resource type="Texture2D" uid="uid://dlkmm7ffcn8f5" path="res://Assets_Final/texturita_gris.png" id="2_gm7my"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4ul0"]
-albedo_texture = ExtResource("2_wp5td")
+albedo_texture = ExtResource("2_gm7my")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gm7my"]
 points = PackedVector3Array(-0.5, -0.05, -0.5, -0.5, 0.05, -0.5, 0.5, -0.05, -0.5, -0.5, -0.05, 0.5, -0.5, 0.05, 0.5, 0.5, 0.05, -0.5, 0.5, -0.05, 0.5, 0.5, 0.05, 0.5)
