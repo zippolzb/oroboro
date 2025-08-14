@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://1rq02n6fqmcp"]
 
-[ext_resource type="ArrayMesh" uid="uid://bd2xcwmpc5no8" path="res://Assets_Final/Table 1x1.obj" id="1_0rx7m"]
+[ext_resource type="ArrayMesh" uid="uid://bd2xcwmpc5no8" path="res://Assets_Final_FINAL/Objects/Table 1x1.obj" id="1_0rx7m"]
 [ext_resource type="Texture2D" uid="uid://cbwauok2ua57e" path="res://Assets_Final/Table 1x1_GMTK2025 - TEXTURE - COLORS ALBEDO.png" id="2_60ub5"]
-[ext_resource type="ArrayMesh" uid="uid://dphkaokqn1xbp" path="res://Assets_Final/Binder.obj" id="3_ym3nw"]
-[ext_resource type="ArrayMesh" uid="uid://dmgpnhahgcq07" path="res://Assets_Final/FileCabinet.obj" id="4_ym3nw"]
+[ext_resource type="ArrayMesh" uid="uid://dphkaokqn1xbp" path="res://Assets_Final_FINAL/Objects/Binder.obj" id="3_ym3nw"]
+[ext_resource type="ArrayMesh" uid="uid://dmgpnhahgcq07" path="res://Assets_Final_FINAL/Objects/FileCabinet.obj" id="4_ym3nw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0twqh"]
 albedo_texture = ExtResource("2_60ub5")
