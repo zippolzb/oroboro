@@ -101,7 +101,6 @@ func game_over(msg: String = 'GAME OVER'):
 func normalize_layers():
 	for item in level.starting_items:
 		if item['node_name'] == 'Mob-Fanty':
-			print('layer 7 activada')
 			item['node'].collision_layer = 7
 
 func _physics_process(delta: float) -> void:
