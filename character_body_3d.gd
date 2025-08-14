@@ -3,6 +3,7 @@ extends CharacterBody3D
 var gravity = 200
 var grid_position := Vector3(0, 0, 0)
 var direccion = 'UP'
+@onready var direccion_dict = {'D': Vector3(0,0,1), 'U': Vector3(0,0,-1), 'R': Vector3(1,0,0), 'L': Vector3(-1,0,0) }
 @onready var last_pos = global_position
 @export var cell_size := 1.0
 @onready var level = get_parent()
@@ -51,10 +52,8 @@ func get_object(collider):
 		var item_to_check = collider
 		var item
 		for obj in objects_position:
-			print(objects_position[obj] == item_to_check)
 			if objects_position[obj] == item_to_check:
 				item = obj
-				print(item)
 		# cambiar mesh a mesa sin objeto
 		collider.get_node(item).visible = false
 		# cambiar la layer a mesa sin objeto
@@ -92,13 +91,19 @@ func check_victory():
 	##ejecutar_accion_monstruo(monster_type)
 	#print("objeto agarrado")
 
-func game_over():
+func game_over(msg: String = 'GAME OVER'):
 	game_over_status = true
 	game_over_sound.play()
-	print("GAME OVER")
+	print(msg)
 	#await get_tree().create_timer(2.0).timeout
 	get_tree().reload_current_scene()
-	
+
+func normalize_layers():
+	for item in level.starting_items:
+		if item['node_name'] == 'Mob-Fanty':
+			print('layer 7 activada')
+			item['node'].collision_layer = 7
+
 func _physics_process(delta: float) -> void:
 	var velocity = Vector3.ZERO
 	if not is_on_floor():
@@ -120,6 +125,7 @@ func _physics_process(delta: float) -> void:
 			gui.move_loop()
 			if action == "Mover":
 				pasitos_sound.play()
+				normalize_layers()
 		if Input.is_action_just_pressed("move_left"):
 			is_safe_to_act = false
 			is_safe_to_talk = false
@@ -130,6 +136,7 @@ func _physics_process(delta: float) -> void:
 			gui.move_loop()
 			if action == "Mover":
 				pasitos_sound.play()
+				normalize_layers()
 		if Input.is_action_just_pressed("move_up"):
 			is_safe_to_act = false
 			is_safe_to_talk = false
@@ -140,6 +147,7 @@ func _physics_process(delta: float) -> void:
 			gui.move_loop()
 			if action == "Mover":
 				pasitos_sound.play()
+				normalize_layers()
 		if Input.is_action_just_pressed("move_down"):
 			is_safe_to_act = false
 			is_safe_to_talk = false
@@ -150,6 +158,7 @@ func _physics_process(delta: float) -> void:
 			gui.move_loop()
 			if action == "Mover":
 				pasitos_sound.play()
+				normalize_layers()
 		
 	var collision = move_and_collide(velocity * delta)
 	if global_position.x > 6.5:
@@ -162,13 +171,10 @@ func _physics_process(delta: float) -> void:
 		global_position.z = 1.5
 	
 	if collision:
+		
 		var collider = collision.get_collider()
 		var layer = collider.get_collision_layer()
-		#print(str(Time.get_datetime_dict_from_system()) + str(layer))
 		var col_dict = {'1':'Wall', '3':'Floor', '5': 'Mesa_sin', '7':'Speaker', '13': 'Biblio', '15': 'Mesa_con'}
-		#if layer == 3:
-			#pass
-		#else:
 		if action == 'Mover':
 			var chocantes = [1,5,7,13,15]
 			var vampi_check = collider.name.substr(0, 5)
@@ -176,6 +182,11 @@ func _physics_process(delta: float) -> void:
 				if layer == 7 and vampi_check == 'Vampi':
 					collision.get_collider().empujar(self, direccion)
 					#set_grid_position(last_pos)
+				elif layer == 7 and vampi_check == 'Fanty':
+					if gui.loop_dict[0]['type'] == 'Mover':
+						collision.get_collider().traspasar(self, direccion)
+					else:
+						game_over("GAME OVER: CAMINAR EN FANTASMAS CUESTA 2 MOVIMIENTOS")
 				else:
 					set_grid_position(last_pos)
 					game_over()

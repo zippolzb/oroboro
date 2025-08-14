@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b1geelryx0p1q"]
+[gd_scene load_steps=14 format=3 uid="uid://b1geelryx0p1q"]
 
 [ext_resource type="Script" uid="uid://banltpcrekbyv" path="res://Testing_level/world-test.gd" id="1_dg8ay"]
 [ext_resource type="PackedScene" uid="uid://udw5oqijeqej" path="res://gui.tscn" id="2_a3ikf"]
@@ -6,22 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://7efn4khg8cci" path="res://gui/interact.png" id="4_m2x0l"]
 [ext_resource type="Texture2D" uid="uid://we68ap6maa8k" path="res://gui/speak.png" id="5_jgxys"]
 [ext_resource type="PackedScene" uid="uid://ccfkp1j5ix6ru" path="res://grid_map.tscn" id="6_1cil2"]
-[ext_resource type="PackedScene" uid="uid://b1ffio6sht8ks" path="res://character_body_3d.tscn" id="8_vv676"]
+[ext_resource type="MeshLibrary" uid="uid://crec1okf035sw" path="res://tileset/pisosgrisecitos.tres" id="7_lvu85"]
+[ext_resource type="PackedScene" path="res://character_body_3d.tscn" id="8_vv676"]
 [ext_resource type="PackedScene" uid="uid://1rq02n6fqmcp" path="res://mesa.tscn" id="9_bjwu7"]
-[ext_resource type="AudioStream" uid="uid://8ik1q754b4i" path="res://sfx/game_over.wav" id="9_ud01n"]
 [ext_resource type="AudioStream" uid="uid://rrhw6kh0vcag" path="res://sfx/victory.wav" id="10_6jm47"]
-[ext_resource type="AudioStream" uid="uid://d0eq6s017ux2m" path="res://sfx/agarra.wav" id="11_4dfx0"]
 [ext_resource type="AudioStream" uid="uid://bwbwmhfi05b6k" path="res://sfx/pasitos.wav" id="11_tvy3h"]
-[ext_resource type="AudioStream" uid="uid://bh6xxgiuevuhn" path="res://sfx/bg_music.mp3" id="13_j5wr6"]
-[ext_resource type="PackedScene" uid="uid://bkykxix32rfys" path="res://mobs/vampi.tscn" id="13_r7sxo"]
-[ext_resource type="AudioStream" uid="uid://drd2ikdrc0yus" path="res://sfx/talk.wav" id="14_fwe13"]
+[ext_resource type="PackedScene" uid="uid://cettouyqve3ns" path="res://mobs/vampi.tscn" id="13_r7sxo"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_pkg7o"]
 
 [node name="World-TEST" type="Node3D"]
 script = ExtResource("1_dg8ay")
-
-[node name="Timer" type="Timer" parent="."]
 
 [node name="GUI" parent="." instance=ExtResource("2_a3ikf")]
 offset_left = 20.301
@@ -42,6 +37,7 @@ texture = ExtResource("3_r7sxo")
 expand_mode = 1
 
 [node name="Interact" type="MarginContainer" parent="GUI"]
+visible = false
 layout_mode = 2
 offset_left = -20.301
 offset_top = -31.9334
@@ -53,19 +49,8 @@ layout_mode = 2
 texture = ExtResource("4_m2x0l")
 expand_mode = 1
 
-[node name="Interact2" type="MarginContainer" parent="GUI"]
-layout_mode = 2
-offset_left = -20.301
-offset_top = -31.9334
-offset_right = 19.699
-offset_bottom = 8.0666
-
-[node name="TextureRect" type="TextureRect" parent="GUI/Interact2"]
-layout_mode = 2
-texture = ExtResource("4_m2x0l")
-expand_mode = 1
-
 [node name="Speak" type="MarginContainer" parent="GUI"]
+visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -112,14 +97,15 @@ texture = ExtResource("3_r7sxo")
 expand_mode = 1
 
 [node name="GridMap" parent="." instance=ExtResource("6_1cil2")]
+mesh_library = ExtResource("7_lvu85")
 collision_layer = 3
 data = {
-"cells": PackedInt32Array(0, 0, 1, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 5, 1, 1441792, 5, 2, 1441792, 5, 3, 1441792, 5, 4, 1441792, 0, 5, 1, 0, 4, 1, 0, 3, 1, 0, 2, 1, 0, 1, 1, 2, 1, 1441792, 4, 1, 1441792, 4, 3, 1441792, 3, 4, 1441792, 2, 4, 1441792, 1, 4, 1441792, 1, 3, 1441792, 1, 2, 1441792, 2, 2, 1441792, 3, 3, 1441792, 6, 0, 1, 6, 1, 1441792, 6, 2, 1441792, 6, 3, 1441792, 6, 4, 1441792, 0, 6, 1, 7, 0, 1, 7, 1, 1441793, 7, 2, 1441793, 7, 3, 1, 7, 4, 1, 7, 6, 1, 7, 7, 1, 6, 7, 1, 5, 7, 1, 4, 7, 1, 3, 7, 1, 2, 7, 1, 1, 7, 1, 0, 7, 1, 2, 3, 1441792, 4, 4, 1441792, 3, 1, 1441792, 3, 2, 1441792, 4, 2, 1441792, 7, 5, 1, 6, 5, 1441792, 5, 5, 1441792, 4, 5, 1441792, 3, 5, 1441792, 2, 5, 1441792, 1, 5, 1441792, 6, 6, 1441792, 5, 6, 1441792, 4, 6, 1441792, 3, 6, 1441792, 2, 6, 1441792, 1, 6, 1441792, 1, 1, 1441792)
+"cells": PackedInt32Array(0, 0, 1, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 5, 1, 0, 5, 2, 0, 5, 3, 0, 5, 4, 0, 0, 5, 1, 0, 4, 1, 0, 3, 1, 0, 2, 1, 0, 1, 1, 2, 1, 0, 4, 1, 0, 4, 3, 0, 3, 4, 0, 2, 4, 0, 1, 4, 0, 1, 3, 0, 1, 2, 0, 2, 2, 0, 3, 3, 0, 6, 0, 1, 6, 1, 0, 6, 2, 0, 6, 3, 0, 6, 4, 0, 0, 6, 1, 7, 0, 1, 7, 1, 1, 7, 2, 1, 7, 3, 1, 7, 4, 1, 7, 6, 1, 7, 7, 1, 6, 7, 1, 5, 7, 1, 4, 7, 1, 3, 7, 1, 2, 7, 1, 1, 7, 1, 0, 7, 1, 2, 3, 0, 4, 4, 0, 3, 1, 0, 3, 2, 0, 1, 1, 0, 4, 2, 0, 7, 5, 1, 6, 5, 0, 5, 5, 0, 4, 5, 0, 3, 5, 0, 2, 5, 0, 1, 5, 0, 6, 6, 0, 5, 6, 0, 4, 6, 0, 3, 6, 0, 2, 6, 0, 1, 6, 0)
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.889254, -0.175473, 0.422418, -0.154709, 0.753685, 0.638768, -0.430456, -0.633379, 0.64307, 8.617, 8.355, 12.47)
+transform = Transform3D(0.5, -0.75, 0.433013, 0, 0.5, 0.866025, -0.866025, -0.433013, 0.25, 11.8315, 16.354, 9.40061)
 attributes = SubResource("CameraAttributesPhysical_pkg7o")
 size = 9.944
 
@@ -130,24 +116,15 @@ transform = Transform3D(0.523388, -0.845554, -0.105371, 0.0419975, -0.0979125, 0
 
 [node name="Starting-Mesas" type="Node" parent="."]
 
-[node name="Mesa-Libro" parent="Starting-Mesas" instance=ExtResource("9_bjwu7")]
+[node name="Mesa-Binder" parent="Starting-Mesas" instance=ExtResource("9_bjwu7")]
 collision_layer = 15
 
 [node name="Mesa-Biblio" parent="Starting-Mesas" instance=ExtResource("9_bjwu7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28018, 0.93017, 2.72113)
 collision_layer = 13
-
-[node name="Mesa-Cruz" parent="Starting-Mesas" instance=ExtResource("9_bjwu7")]
-collision_layer = 15
 
 [node name="Walls" type="Node" parent="."]
 
-[node name="Mesa" parent="Walls" instance=ExtResource("9_bjwu7")]
-
 [node name="Sounds" type="Node" parent="."]
-
-[node name="GameOver" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("9_ud01n")
 
 [node name="Victory" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("10_6jm47")
@@ -155,18 +132,7 @@ stream = ExtResource("10_6jm47")
 [node name="Pasitos" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("11_tvy3h")
 
-[node name="Agarra" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("11_4dfx0")
-
-[node name="BgMusic" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("13_j5wr6")
-autoplay = true
-
-[node name="Talk" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("14_fwe13")
-
 [node name="Mobs" type="Node" parent="."]
 
 [node name="Vampi" parent="Mobs" instance=ExtResource("13_r7sxo")]
-
-[node name="Vampi2" parent="Mobs" instance=ExtResource("13_r7sxo")]
+collision_layer = 17

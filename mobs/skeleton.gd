@@ -20,6 +20,18 @@ func _physics_process(delta: float) -> void:
 	if dir == 'U':
 		velocity.z -= speed
 	var collision = move_and_collide(velocity * delta)
+	if global_position.x > 6.5:
+		global_position.x = 6.5
+		velocity.x = 0
+	elif global_position.x < 1.5:
+		global_position.x = 1.5
+		velocity.x = 0
+	elif global_position.z < 1.5:
+		global_position.z = 1.5
+		velocity.x = 0
+	elif global_position.z > 6.5:
+		global_position.z = 6.5
+		velocity.x = 0
 	
 	if collision:
 		var collider = collision.get_collider()

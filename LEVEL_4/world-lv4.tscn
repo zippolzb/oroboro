@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://7efn4khg8cci" path="res://gui/interact.png" id="4_4313e"]
 [ext_resource type="Texture2D" uid="uid://we68ap6maa8k" path="res://gui/speak.png" id="5_3ifnq"]
 [ext_resource type="PackedScene" uid="uid://ccfkp1j5ix6ru" path="res://grid_map.tscn" id="6_he80r"]
-[ext_resource type="PackedScene" path="res://character_body_3d.tscn" id="7_1f6wu"]
+[ext_resource type="PackedScene" uid="uid://b1ffio6sht8ks" path="res://character_body_3d.tscn" id="7_1f6wu"]
 [ext_resource type="PackedScene" uid="uid://1rq02n6fqmcp" path="res://mesa.tscn" id="8_wf2lu"]
 [ext_resource type="AudioStream" uid="uid://rrhw6kh0vcag" path="res://sfx/victory.wav" id="9_wcy6i"]
 [ext_resource type="AudioStream" uid="uid://bwbwmhfi05b6k" path="res://sfx/pasitos.wav" id="10_ydcef"]
@@ -146,7 +146,7 @@ transform = Transform3D(0.523388, -0.845554, -0.105371, 0.0419975, -0.0979125, 0
 collision_layer = 15
 
 [node name="Mesa-Biblio" parent="Starting-Mesas" instance=ExtResource("8_wf2lu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28018, 0.93017, 2.72113)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.28018, 0.93017, 2.72113)
 collision_layer = 13
 
 [node name="Walls" type="Node" parent="."]

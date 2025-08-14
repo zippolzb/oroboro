@@ -72,4 +72,6 @@ func checkLoop(dir):
 	return next_action
 	
 func _process(delta: float) -> void:
-	pass
+	if player.win_status == true:
+		await get_tree().create_timer(2.0).timeout
+		get_tree().change_scene_to_file(next_level)
