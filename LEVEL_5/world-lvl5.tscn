@@ -1,29 +1,29 @@
-[gd_scene load_steps=17 format=3 uid="uid://b1geelryx0p1q"]
+[gd_scene load_steps=17 format=3 uid="uid://3mhqd1jjks45"]
 
-[ext_resource type="Script" uid="uid://banltpcrekbyv" path="res://Testing_level/world-test.gd" id="1_dg8ay"]
-[ext_resource type="PackedScene" uid="uid://udw5oqijeqej" path="res://gui.tscn" id="2_a3ikf"]
-[ext_resource type="Texture2D" uid="uid://bpa4bsc7eq23e" path="res://gui/move.png" id="3_r7sxo"]
-[ext_resource type="Texture2D" uid="uid://7efn4khg8cci" path="res://gui/interact.png" id="4_m2x0l"]
-[ext_resource type="Texture2D" uid="uid://we68ap6maa8k" path="res://gui/speak.png" id="5_jgxys"]
-[ext_resource type="PackedScene" uid="uid://ccfkp1j5ix6ru" path="res://grid_map.tscn" id="6_1cil2"]
-[ext_resource type="PackedScene" uid="uid://b1ffio6sht8ks" path="res://character_body_3d.tscn" id="8_vv676"]
-[ext_resource type="PackedScene" uid="uid://1rq02n6fqmcp" path="res://mesa.tscn" id="9_bjwu7"]
-[ext_resource type="AudioStream" uid="uid://8ik1q754b4i" path="res://sfx/game_over.wav" id="9_ud01n"]
-[ext_resource type="AudioStream" uid="uid://rrhw6kh0vcag" path="res://sfx/victory.wav" id="10_6jm47"]
-[ext_resource type="AudioStream" uid="uid://d0eq6s017ux2m" path="res://sfx/agarra.wav" id="11_4dfx0"]
-[ext_resource type="AudioStream" uid="uid://bwbwmhfi05b6k" path="res://sfx/pasitos.wav" id="11_tvy3h"]
-[ext_resource type="AudioStream" uid="uid://bh6xxgiuevuhn" path="res://sfx/bg_music.mp3" id="13_j5wr6"]
-[ext_resource type="PackedScene" uid="uid://bkykxix32rfys" path="res://mobs/vampi.tscn" id="13_r7sxo"]
-[ext_resource type="AudioStream" uid="uid://drd2ikdrc0yus" path="res://sfx/talk.wav" id="14_fwe13"]
+[ext_resource type="Script" uid="uid://d3ym2nwscajub" path="res://LEVEL_5/world-lvl5.gd" id="1_4agac"]
+[ext_resource type="PackedScene" uid="uid://udw5oqijeqej" path="res://gui.tscn" id="2_xvxku"]
+[ext_resource type="Texture2D" uid="uid://bpa4bsc7eq23e" path="res://gui/move.png" id="3_wfvxm"]
+[ext_resource type="Texture2D" uid="uid://7efn4khg8cci" path="res://gui/interact.png" id="4_2o145"]
+[ext_resource type="Texture2D" uid="uid://we68ap6maa8k" path="res://gui/speak.png" id="5_o7ban"]
+[ext_resource type="PackedScene" uid="uid://ccfkp1j5ix6ru" path="res://grid_map.tscn" id="6_wwtgc"]
+[ext_resource type="PackedScene" uid="uid://b1ffio6sht8ks" path="res://character_body_3d.tscn" id="7_pgtli"]
+[ext_resource type="PackedScene" uid="uid://1rq02n6fqmcp" path="res://mesa.tscn" id="8_6otac"]
+[ext_resource type="AudioStream" uid="uid://8ik1q754b4i" path="res://sfx/game_over.wav" id="9_10bxi"]
+[ext_resource type="AudioStream" uid="uid://rrhw6kh0vcag" path="res://sfx/victory.wav" id="10_6fixb"]
+[ext_resource type="AudioStream" uid="uid://bwbwmhfi05b6k" path="res://sfx/pasitos.wav" id="11_dsoda"]
+[ext_resource type="AudioStream" uid="uid://d0eq6s017ux2m" path="res://sfx/agarra.wav" id="12_iafwk"]
+[ext_resource type="AudioStream" uid="uid://bh6xxgiuevuhn" path="res://sfx/bg_music.mp3" id="13_54dw7"]
+[ext_resource type="AudioStream" uid="uid://drd2ikdrc0yus" path="res://sfx/talk.wav" id="14_k5k54"]
+[ext_resource type="PackedScene" uid="uid://l0j4yq68tkjk" path="res://mobs/skeleton.tscn" id="15_4agac"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_pkg7o"]
 
-[node name="World-TEST" type="Node3D"]
-script = ExtResource("1_dg8ay")
+[node name="World-lvl5" type="Node3D"]
+script = ExtResource("1_4agac")
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="GUI" parent="." instance=ExtResource("2_a3ikf")]
+[node name="GUI" parent="." instance=ExtResource("2_xvxku")]
 offset_left = 20.301
 offset_top = 31.9334
 offset_right = 60.301
@@ -38,7 +38,7 @@ offset_bottom = 8.0666
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Move"]
 layout_mode = 2
-texture = ExtResource("3_r7sxo")
+texture = ExtResource("3_wfvxm")
 expand_mode = 1
 
 [node name="Interact" type="MarginContainer" parent="GUI"]
@@ -50,7 +50,7 @@ offset_bottom = 8.0666
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Interact"]
 layout_mode = 2
-texture = ExtResource("4_m2x0l")
+texture = ExtResource("4_2o145")
 expand_mode = 1
 
 [node name="Interact2" type="MarginContainer" parent="GUI"]
@@ -62,7 +62,7 @@ offset_bottom = 8.0666
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Interact2"]
 layout_mode = 2
-texture = ExtResource("4_m2x0l")
+texture = ExtResource("4_2o145")
 expand_mode = 1
 
 [node name="Speak" type="MarginContainer" parent="GUI"]
@@ -72,7 +72,7 @@ offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Speak"]
 layout_mode = 2
-texture = ExtResource("5_jgxys")
+texture = ExtResource("5_o7ban")
 expand_mode = 1
 
 [node name="Move2" type="MarginContainer" parent="GUI"]
@@ -84,7 +84,7 @@ offset_bottom = 8.0666
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Move2"]
 layout_mode = 2
-texture = ExtResource("3_r7sxo")
+texture = ExtResource("3_wfvxm")
 expand_mode = 1
 
 [node name="Move3" type="MarginContainer" parent="GUI"]
@@ -96,7 +96,7 @@ offset_bottom = 8.0666
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Move3"]
 layout_mode = 2
-texture = ExtResource("3_r7sxo")
+texture = ExtResource("3_wfvxm")
 expand_mode = 1
 
 [node name="Move4" type="MarginContainer" parent="GUI"]
@@ -108,10 +108,10 @@ offset_bottom = 8.0666
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Move4"]
 layout_mode = 2
-texture = ExtResource("3_r7sxo")
+texture = ExtResource("3_wfvxm")
 expand_mode = 1
 
-[node name="GridMap" parent="." instance=ExtResource("6_1cil2")]
+[node name="GridMap" parent="." instance=ExtResource("6_wwtgc")]
 collision_layer = 3
 data = {
 "cells": PackedInt32Array(0, 0, 1, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 5, 1, 1441792, 5, 2, 1441792, 5, 3, 1441792, 5, 4, 1441792, 0, 5, 1, 0, 4, 1, 0, 3, 1, 0, 2, 1, 0, 1, 1, 2, 1, 1441792, 4, 1, 1441792, 4, 3, 1441792, 3, 4, 1441792, 2, 4, 1441792, 1, 4, 1441792, 1, 3, 1441792, 1, 2, 1441792, 2, 2, 1441792, 3, 3, 1441792, 6, 0, 1, 6, 1, 1441792, 6, 2, 1441792, 6, 3, 1441792, 6, 4, 1441792, 0, 6, 1, 7, 0, 1, 7, 1, 1441793, 7, 2, 1441793, 7, 3, 1, 7, 4, 1, 7, 6, 1, 7, 7, 1, 6, 7, 1, 5, 7, 1, 4, 7, 1, 3, 7, 1, 2, 7, 1, 1, 7, 1, 0, 7, 1, 2, 3, 1441792, 4, 4, 1441792, 3, 1, 1441792, 3, 2, 1441792, 4, 2, 1441792, 7, 5, 1, 6, 5, 1441792, 5, 5, 1441792, 4, 5, 1441792, 3, 5, 1441792, 2, 5, 1441792, 1, 5, 1441792, 6, 6, 1441792, 5, 6, 1441792, 4, 6, 1441792, 3, 6, 1441792, 2, 6, 1441792, 1, 6, 1441792, 1, 1, 1441792)
@@ -126,47 +126,60 @@ size = 9.944
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.523388, -0.845554, -0.105371, 0.0419975, -0.0979125, 0.994309, -0.851059, -0.524835, -0.0157351, 10, 10.3905, 10)
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("8_vv676")]
+[node name="CharacterBody3D" parent="." instance=ExtResource("7_pgtli")]
 
 [node name="Starting-Mesas" type="Node" parent="."]
 
-[node name="Mesa-Libro" parent="Starting-Mesas" instance=ExtResource("9_bjwu7")]
+[node name="Mesa-Libro" parent="Starting-Mesas" instance=ExtResource("8_6otac")]
 collision_layer = 15
 
-[node name="Mesa-Biblio" parent="Starting-Mesas" instance=ExtResource("9_bjwu7")]
+[node name="Mesa-Biblio" parent="Starting-Mesas" instance=ExtResource("8_6otac")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28018, 0.93017, 2.72113)
 collision_layer = 13
 
-[node name="Mesa-Cruz" parent="Starting-Mesas" instance=ExtResource("9_bjwu7")]
-collision_layer = 15
-
 [node name="Walls" type="Node" parent="."]
 
-[node name="Mesa" parent="Walls" instance=ExtResource("9_bjwu7")]
+[node name="Mesa" parent="Walls" instance=ExtResource("8_6otac")]
+
+[node name="Mesa2" parent="Walls" instance=ExtResource("8_6otac")]
+
+[node name="Mesa3" parent="Walls" instance=ExtResource("8_6otac")]
+
+[node name="Mesa4" parent="Walls" instance=ExtResource("8_6otac")]
+
+[node name="Mesa5" parent="Walls" instance=ExtResource("8_6otac")]
+
+[node name="Mesa6" parent="Walls" instance=ExtResource("8_6otac")]
+
+[node name="Mesa7" parent="Walls" instance=ExtResource("8_6otac")]
+
+[node name="Mesa8" parent="Walls" instance=ExtResource("8_6otac")]
 
 [node name="Sounds" type="Node" parent="."]
 
 [node name="GameOver" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("9_ud01n")
+stream = ExtResource("9_10bxi")
 
 [node name="Victory" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("10_6jm47")
+stream = ExtResource("10_6fixb")
 
 [node name="Pasitos" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("11_tvy3h")
+stream = ExtResource("11_dsoda")
 
 [node name="Agarra" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("11_4dfx0")
+stream = ExtResource("12_iafwk")
 
 [node name="BgMusic" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("13_j5wr6")
+stream = ExtResource("13_54dw7")
 autoplay = true
 
 [node name="Talk" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("14_fwe13")
+stream = ExtResource("14_k5k54")
 
 [node name="Mobs" type="Node" parent="."]
 
-[node name="Vampi" parent="Mobs" instance=ExtResource("13_r7sxo")]
+[node name="Skeleton" parent="Mobs" instance=ExtResource("15_4agac")]
 
-[node name="Vampi2" parent="Mobs" instance=ExtResource("13_r7sxo")]
+[node name="Skeleton2" parent="Mobs" instance=ExtResource("15_4agac")]
+
+[node name="Skeleton3" parent="Mobs" instance=ExtResource("15_4agac")]
