@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1ffio6sht8ks"]
 
 [ext_resource type="Script" uid="uid://5rcduo627bdp" path="res://character_body_3d.gd" id="1_iwpo4"]
-[ext_resource type="PackedScene" uid="uid://cnmp23d4ymjyl" path="res://Assets_Final/Ann_Xiety.glb" id="2_fb3t6"]
+[ext_resource type="PackedScene" uid="uid://cnmp23d4ymjyl" path="res://mobs/Ann_Xiety.glb" id="2_fb3t6"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bu0v1"]
 height = 1.75

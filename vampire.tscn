@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://blgn5twidxu8k"]
+
+[ext_resource type="PackedScene" uid="uid://d4bsurogrkngd" path="res://mobs/Vampire.glb" id="1_73ghq"]
+[ext_resource type="Material" uid="uid://7dvar4v8n004" path="res://Assets_Final/Main_Material.tres" id="2_43os1"]
+
+[node name="Vampire" instance=ExtResource("1_73ghq")]
+
+[node name="Character_Vampire" parent="Vampire_GameRig_ROOT/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("2_43os1")

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bdpicbnm2gup4"
-path="res://.godot/imported/Skeleton.glb-88b375379c4f14c0bb47b5878fafecda.scn"
+uid="uid://1ogac70ijfji"
+path="res://.godot/imported/Ghost.glb-f0877d8fe8548a111439abe5b060c44a.scn"
 
 [deps]
 
-source_file="res://Assets_Final/Skeleton.glb"
-dest_files=["res://.godot/imported/Skeleton.glb-88b375379c4f14c0bb47b5878fafecda.scn"]
+source_file="res://mobs/Ghost.glb"
+dest_files=["res://.godot/imported/Ghost.glb-f0877d8fe8548a111439abe5b060c44a.scn"]
 
 [params]
 
@@ -34,7 +34,7 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "animations": {
-"SkeletonIdleWalk_001": {
+"GhostIdle": {
 "save_to_file/enabled": false,
 "save_to_file/keep_custom_tracks": "",
 "save_to_file/path": "",
