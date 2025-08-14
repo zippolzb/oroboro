@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://03x0wgb8x00p"]
 
-[ext_resource type="Script" uid="uid://cx0ta6lcw138u" path="res://Assets_Final/world-fanty.gd" id="1_clb2n"]
+[ext_resource type="Script" uid="uid://bciwjc1bqor0r" path="res://mobs/fanty.gd" id="1_clb2n"]
 [ext_resource type="PackedScene" uid="uid://bdpicbnm2gup4" path="res://Assets_Final/Skeleton.glb" id="2_m6tj1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ysy4"]
