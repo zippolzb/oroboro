@@ -1,18 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://1rq02n6fqmcp"]
+[gd_scene load_steps=11 format=3 uid="uid://1rq02n6fqmcp"]
 
 [ext_resource type="ArrayMesh" uid="uid://bd2xcwmpc5no8" path="res://Assets_Final_FINAL/Objects/Table 1x1.obj" id="1_0rx7m"]
 [ext_resource type="Texture2D" uid="uid://cbwauok2ua57e" path="res://Assets_Final/Table 1x1_GMTK2025 - TEXTURE - COLORS ALBEDO.png" id="2_60ub5"]
 [ext_resource type="ArrayMesh" uid="uid://dphkaokqn1xbp" path="res://Assets_Final_FINAL/Objects/Binder.obj" id="3_ym3nw"]
+[ext_resource type="ArrayMesh" uid="uid://cnf80gnviyvjq" path="res://Assets_Final_FINAL/Objects/Cross.obj" id="4_7itov"]
 [ext_resource type="ArrayMesh" uid="uid://dmgpnhahgcq07" path="res://Assets_Final_FINAL/Objects/FileCabinet.obj" id="4_ym3nw"]
+[ext_resource type="Material" uid="uid://7dvar4v8n004" path="res://Assets_Final/Main_Material.tres" id="5_vclaj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0twqh"]
 albedo_texture = ExtResource("2_60ub5")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60ub5"]
 albedo_texture = ExtResource("2_60ub5")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ym3nw"]
-albedo_color = Color(0.116667, 0, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0rx7m"]
 size = Vector3(0.95, 1, 0.95)
@@ -36,8 +35,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_60ub5")
 [node name="Cruz" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.521704, 0)
 visible = false
-mesh = ExtResource("3_ym3nw")
-surface_material_override/0 = SubResource("StandardMaterial3D_ym3nw")
+mesh = ExtResource("4_7itov")
+surface_material_override/0 = ExtResource("5_vclaj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49979, 0)
