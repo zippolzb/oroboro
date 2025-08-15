@@ -3,11 +3,12 @@ var dir = ''
 var speed = 18900
 
 func traspasar(player, direccion):
-	print("pase por aca")
 	self.collision_layer = 6
+	print(self)
+	self.get_node('Ghost_main').visible = false
+	self.get_node('Ghost-trans').visible = true
 	player.gui.move_loop()
 	player.level.checkLoop(direccion)
-	print(player.last_pos + player.direccion_dict[direccion])
 	player.set_grid_position(player.last_pos + player.direccion_dict[direccion])
 
 func empujar(player, direccion):

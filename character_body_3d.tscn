@@ -15,7 +15,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.87525, 0)
 shape = SubResource("CylinderShape3D_bu0v1")
 
 [node name="Ann_Xiety" parent="." instance=ExtResource("2_fb3t6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00606549, 0, -0.0205097)
-visible = false
-
-[node name="Ann_Xiety2" parent="." instance=ExtResource("2_fb3t6")]

@@ -25,9 +25,12 @@ var direccion = 'UP'
 @onready var agarra_sound = $"../Sounds/Agarra"
 @onready var suelta_sound = $"../Sounds/Suelta"
 @onready var talk_sound = $"../Sounds/Talk"
+@onready var anim_player = $Ann_Xiety/AnimationPlayer
+@onready var walk: String = "Walk"
 
 
 func _ready():
+	anim_player.play(walk)
 	if has_node("../Starting-Mesas/Mesa-Cruz"):
 		cruz = $"../Starting-Mesas/Mesa-Cruz"
 		objects_position = {'Libro': $"../Starting-Mesas/Mesa-Libro", 'biblio': $"../Starting-Mesas/Mesa-Biblio", 'Cruz':$"../Starting-Mesas/Mesa-Cruz"}
@@ -48,6 +51,9 @@ func move_in_direction(delta: Vector3):
 
 func get_object(collider):
 	if hands_full == false:
+		anim_player.play('GrabObject')
+		await get_tree().create_timer(0.35).timeout
+		anim_player.play(walk)
 		agarra_sound.play()
 		var item_to_check = collider
 		var item
@@ -91,17 +97,24 @@ func check_victory():
 	##ejecutar_accion_monstruo(monster_type)
 	#print("objeto agarrado")
 
-func game_over(msg: String = 'GAME OVER'):
-	game_over_status = true
-	game_over_sound.play()
-	print(msg)
-	#await get_tree().create_timer(2.0).timeout
-	get_tree().reload_current_scene()
+func game_over(msg: String = 'GAME OVER'):	
+	if game_over_status == false:
+		var temp_sound = AudioStreamPlayer.new()
+		temp_sound.stream = preload("res://sfx/game_over.wav")
+		game_over_status = true
+		add_child(temp_sound)
+		temp_sound.play()
+		anim_player.play('GameOver')
+		print(msg)
+		await get_tree().create_timer(2.0).timeout
+		get_tree().reload_current_scene()
 
 func normalize_layers():
 	for item in level.starting_items:
 		if item['node_name'] == 'Mob-Fanty':
 			item['node'].collision_layer = 7
+			item['node'].get_node('Ghost_main').visible = true
+			item['node'].get_node('Ghost-trans').visible = false
 
 func _physics_process(delta: float) -> void:
 	var velocity = Vector3.ZERO
@@ -109,12 +122,14 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= gravity * delta
 	else:
 		velocity.y = 0
-	
+
+# ==== SECCION CONTROL DE INPUTS ====
 	last_pos = global_position
 	if game_over_status == false and win_status == false:
 		if Input.is_action_just_pressed("reset"):
 			get_tree().reload_current_scene()
 		if Input.is_action_just_pressed("move_rigth"):
+			rotation_degrees = Vector3(0, 90, 0)
 			is_safe_to_act = false
 			is_safe_to_talk = false
 			position.x += 1
@@ -126,6 +141,7 @@ func _physics_process(delta: float) -> void:
 				pasitos_sound.play()
 				normalize_layers()
 		if Input.is_action_just_pressed("move_left"):
+			rotation_degrees = Vector3(0, -90, 0)
 			is_safe_to_act = false
 			is_safe_to_talk = false
 			position.x -= 1
@@ -137,6 +153,7 @@ func _physics_process(delta: float) -> void:
 				pasitos_sound.play()
 				normalize_layers()
 		if Input.is_action_just_pressed("move_up"):
+			rotation_degrees = Vector3(0, 180, 0)
 			is_safe_to_act = false
 			is_safe_to_talk = false
 			position.z -= 1
@@ -148,6 +165,7 @@ func _physics_process(delta: float) -> void:
 				pasitos_sound.play()
 				normalize_layers()
 		if Input.is_action_just_pressed("move_down"):
+			rotation_degrees = Vector3(0, 360, 0)
 			is_safe_to_act = false
 			is_safe_to_talk = false
 			position.z += 1
@@ -207,7 +225,7 @@ func _physics_process(delta: float) -> void:
 				check_victory()
 			elif layer == 3:
 				if is_safe_to_act == false:
-					game_over()
+					game_over('INTERACTUASTE MAL')
 				else:
 					pass
 			else: 
@@ -217,7 +235,7 @@ func _physics_process(delta: float) -> void:
 				talk_sound.play()
 				is_safe_to_talk = true
 				set_grid_position(last_pos+Vector3(0,0,0))
-				await get_tree().create_timer(1.0).timeout
+				await get_tree().create_timer(0.6).timeout
 				collision.get_collider().mover(self,direccion)
 			elif layer == 3:
 				if is_safe_to_talk == false:

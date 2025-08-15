@@ -1,10 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://cju07qbcmmj3w"]
+[gd_scene load_steps=17 format=3 uid="uid://cju07qbcmmj3w"]
 
 [ext_resource type="Script" uid="uid://hwf1cs0ggaof" path="res://LEVEL_7/world-lvl7.gd" id="1_uguju"]
 [ext_resource type="PackedScene" uid="uid://udw5oqijeqej" path="res://gui.tscn" id="2_i4jy3"]
 [ext_resource type="Texture2D" uid="uid://bpa4bsc7eq23e" path="res://gui/move.png" id="3_lxfar"]
 [ext_resource type="Texture2D" uid="uid://7efn4khg8cci" path="res://gui/interact.png" id="4_vf27p"]
-[ext_resource type="Texture2D" uid="uid://we68ap6maa8k" path="res://gui/speak.png" id="5_5ys8q"]
 [ext_resource type="PackedScene" uid="uid://ccfkp1j5ix6ru" path="res://grid_map.tscn" id="6_fdce0"]
 [ext_resource type="PackedScene" uid="uid://b1ffio6sht8ks" path="res://character_body_3d.tscn" id="7_q043d"]
 [ext_resource type="PackedScene" uid="uid://1rq02n6fqmcp" path="res://mesa.tscn" id="8_hbaq2"]
@@ -12,8 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://rrhw6kh0vcag" path="res://sfx/victory.wav" id="10_4nkcn"]
 [ext_resource type="AudioStream" uid="uid://bwbwmhfi05b6k" path="res://sfx/pasitos.wav" id="11_xc5kl"]
 [ext_resource type="AudioStream" uid="uid://d0eq6s017ux2m" path="res://sfx/agarra.wav" id="12_v1jkt"]
+[ext_resource type="AudioStream" uid="uid://bxr2moct8yfm1" path="res://sfx/xcusemecorto.wav" id="13_ga630"]
 [ext_resource type="AudioStream" uid="uid://bh6xxgiuevuhn" path="res://sfx/bg_music.mp3" id="13_xk37t"]
-[ext_resource type="AudioStream" uid="uid://drd2ikdrc0yus" path="res://sfx/talk.wav" id="14_vn4gp"]
 [ext_resource type="PackedScene" uid="uid://bkykxix32rfys" path="res://mobs/vampi.tscn" id="15_0v2fh"]
 [ext_resource type="PackedScene" uid="uid://03x0wgb8x00p" path="res://mobs/fanty.tscn" id="16_b8xte"]
 
@@ -54,28 +53,6 @@ layout_mode = 2
 texture = ExtResource("4_vf27p")
 expand_mode = 1
 
-[node name="Interact2" type="MarginContainer" parent="GUI"]
-layout_mode = 2
-offset_left = -20.301
-offset_top = -31.9334
-offset_right = 19.699
-offset_bottom = 8.0666
-
-[node name="TextureRect" type="TextureRect" parent="GUI/Interact2"]
-layout_mode = 2
-texture = ExtResource("4_vf27p")
-expand_mode = 1
-
-[node name="Speak" type="MarginContainer" parent="GUI"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TextureRect" type="TextureRect" parent="GUI/Speak"]
-layout_mode = 2
-texture = ExtResource("5_5ys8q")
-expand_mode = 1
-
 [node name="Move2" type="MarginContainer" parent="GUI"]
 layout_mode = 0
 offset_left = -20.301
@@ -96,18 +73,6 @@ offset_right = 19.699
 offset_bottom = 8.0666
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Move3"]
-layout_mode = 2
-texture = ExtResource("3_lxfar")
-expand_mode = 1
-
-[node name="Move4" type="MarginContainer" parent="GUI"]
-layout_mode = 0
-offset_left = -20.301
-offset_top = -31.9334
-offset_right = 19.699
-offset_bottom = 8.0666
-
-[node name="TextureRect" type="TextureRect" parent="GUI/Move4"]
 layout_mode = 2
 texture = ExtResource("3_lxfar")
 expand_mode = 1
@@ -190,7 +155,7 @@ stream = ExtResource("13_xk37t")
 autoplay = true
 
 [node name="Talk" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("14_vn4gp")
+stream = ExtResource("13_ga630")
 
 [node name="Mobs" type="Node" parent="."]
 

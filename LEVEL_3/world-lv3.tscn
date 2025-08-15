@@ -14,7 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://8ik1q754b4i" path="res://sfx/game_over.wav" id="11_hj6sf"]
 [ext_resource type="PackedScene" uid="uid://l0j4yq68tkjk" path="res://mobs/skeleton.tscn" id="12_1wl2o"]
 [ext_resource type="AudioStream" uid="uid://bh6xxgiuevuhn" path="res://sfx/bg_music.mp3" id="13_53xdb"]
-[ext_resource type="AudioStream" uid="uid://drd2ikdrc0yus" path="res://sfx/talk.wav" id="14_eqmmd"]
+[ext_resource type="AudioStream" uid="uid://bxr2moct8yfm1" path="res://sfx/xcusemecorto.wav" id="14_eqmmd"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_pkg7o"]
 

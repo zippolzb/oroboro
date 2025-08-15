@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://blpygkfqh2jnd"]
+[gd_scene load_steps=15 format=3 uid="uid://blpygkfqh2jnd"]
 
 [ext_resource type="Script" uid="uid://dkkrt7psc2woi" path="res://LEVEL_2/world-lvl2.gd" id="1_eguv8"]
 [ext_resource type="PackedScene" uid="uid://udw5oqijeqej" path="res://gui.tscn" id="2_kil5b"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://bwbwmhfi05b6k" path="res://sfx/pasitos.wav" id="10_nqp20"]
 [ext_resource type="AudioStream" uid="uid://8ik1q754b4i" path="res://sfx/game_over.wav" id="11_pgir0"]
 [ext_resource type="AudioStream" uid="uid://bh6xxgiuevuhn" path="res://sfx/bg_music.mp3" id="12_eguv8"]
+[ext_resource type="AudioStream" uid="uid://bxr2moct8yfm1" path="res://sfx/xcusemecorto.wav" id="13_kil5b"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_pkg7o"]
 
@@ -129,5 +130,8 @@ stream = ExtResource("11_pgir0")
 [node name="BgMusic" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("12_eguv8")
 autoplay = true
+
+[node name="Talk" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("13_kil5b")
 
 [node name="Mobs" type="Node" parent="."]

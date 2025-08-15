@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://bwbwmhfi05b6k" path="res://sfx/pasitos.wav" id="11_dsoda"]
 [ext_resource type="AudioStream" uid="uid://d0eq6s017ux2m" path="res://sfx/agarra.wav" id="12_iafwk"]
 [ext_resource type="AudioStream" uid="uid://bh6xxgiuevuhn" path="res://sfx/bg_music.mp3" id="13_54dw7"]
-[ext_resource type="AudioStream" uid="uid://drd2ikdrc0yus" path="res://sfx/talk.wav" id="14_k5k54"]
+[ext_resource type="AudioStream" uid="uid://bxr2moct8yfm1" path="res://sfx/xcusemecorto.wav" id="14_4agac"]
 [ext_resource type="PackedScene" uid="uid://l0j4yq68tkjk" path="res://mobs/skeleton.tscn" id="15_4agac"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_pkg7o"]
@@ -174,7 +174,7 @@ stream = ExtResource("13_54dw7")
 autoplay = true
 
 [node name="Talk" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("14_k5k54")
+stream = ExtResource("14_4agac")
 
 [node name="Mobs" type="Node" parent="."]
 

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://e174kqsetp23"]
+
+[ext_resource type="PackedScene" uid="uid://mw4c4026k6y4" path="res://tileset/tile_a.tscn" id="1_i5ebb"]
+[ext_resource type="PackedScene" uid="uid://diet2yumoenuv" path="res://tileset/tile_b.tscn" id="2_hgxfs"]
+
+[node name="NewTileList" type="Node3D"]
+
+[node name="TileA" parent="." instance=ExtResource("1_i5ebb")]
+
+[node name="TileB" parent="." instance=ExtResource("2_hgxfs")]

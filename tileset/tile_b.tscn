@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://diet2yumoenuv"]
+
+[ext_resource type="ArrayMesh" uid="uid://pvwa7r5uhpvu" path="res://Assets_Final/FloorBlanquito.obj" id="1_v0pgy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f0yjk"]
+albedo_color = Color(0.024602, 0.0940977, 0.142571, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eosh3"]
+points = PackedVector3Array(-0.5, -0.05, -0.5, -0.5, 0.05, -0.5, 0.5, -0.05, -0.5, -0.5, -0.05, 0.5, -0.5, 0.05, 0.5, 0.5, 0.05, -0.5, 0.5, -0.05, 0.5, 0.5, 0.05, 0.5)
+
+[node name="TileB" type="MeshInstance3D"]
+layers = 3
+mesh = ExtResource("1_v0pgy")
+surface_material_override/0 = SubResource("StandardMaterial3D_f0yjk")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_eosh3")

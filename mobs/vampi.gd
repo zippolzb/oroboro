@@ -2,6 +2,10 @@ extends CharacterBody3D
 var dir = ''
 var speed = 18900
 
+@onready var anim_player = $Vampire/AnimationPlayer
+
+func _ready() -> void:
+	anim_player.play('VampireWalkGR')
 func empujar(player, direccion):
 	var direcciones = {'D': Vector3(0,0,1), 'U': Vector3(0,0,-1), 'R': Vector3(1,0,0), 'L': Vector3(-1,0,0) }
 	var vampi_pos = self.global_position + direcciones[direccion]

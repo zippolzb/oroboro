@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://ce6gsetiwf3wx"]
+[gd_scene load_steps=14 format=3 uid="uid://ce6gsetiwf3wx"]
 
 [ext_resource type="Script" uid="uid://bsqo5t04gofft" path="res://LEVEL_1/world_lvl1.gd" id="1_eau1g"]
 [ext_resource type="PackedScene" uid="uid://udw5oqijeqej" path="res://gui.tscn" id="2_hfejk"]
 [ext_resource type="Texture2D" uid="uid://7efn4khg8cci" path="res://gui/interact.png" id="4_pg8f0"]
 [ext_resource type="PackedScene" uid="uid://ccfkp1j5ix6ru" path="res://grid_map.tscn" id="6_wiqf2"]
 [ext_resource type="PackedScene" uid="uid://b1ffio6sht8ks" path="res://character_body_3d.tscn" id="7_2ljj7"]
+[ext_resource type="AudioStream" uid="uid://bxr2moct8yfm1" path="res://sfx/xcusemecorto.wav" id="7_eau1g"]
 [ext_resource type="PackedScene" uid="uid://1rq02n6fqmcp" path="res://mesa.tscn" id="8_ktcew"]
 [ext_resource type="AudioStream" uid="uid://rrhw6kh0vcag" path="res://sfx/victory.wav" id="9_4p4cy"]
 [ext_resource type="AudioStream" uid="uid://8ik1q754b4i" path="res://sfx/game_over.wav" id="9_6i4jn"]
@@ -71,6 +72,9 @@ collision_layer = 13
 [node name="Mesa3" parent="Walls" instance=ExtResource("8_ktcew")]
 
 [node name="Sounds" type="Node" parent="."]
+
+[node name="Talk" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("7_eau1g")
 
 [node name="Victory" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("9_4p4cy")

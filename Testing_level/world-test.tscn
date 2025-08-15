@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b1geelryx0p1q"]
+[gd_scene load_steps=18 format=3 uid="uid://b1geelryx0p1q"]
 
 [ext_resource type="Script" uid="uid://banltpcrekbyv" path="res://Testing_level/world-test.gd" id="1_dg8ay"]
 [ext_resource type="PackedScene" uid="uid://udw5oqijeqej" path="res://gui.tscn" id="2_a3ikf"]
@@ -15,11 +15,19 @@
 [ext_resource type="AudioStream" uid="uid://bh6xxgiuevuhn" path="res://sfx/bg_music.mp3" id="13_j5wr6"]
 [ext_resource type="PackedScene" uid="uid://bkykxix32rfys" path="res://mobs/vampi.tscn" id="13_r7sxo"]
 [ext_resource type="AudioStream" uid="uid://drd2ikdrc0yus" path="res://sfx/talk.wav" id="14_fwe13"]
+[ext_resource type="AudioStream" uid="uid://bxr2moct8yfm1" path="res://sfx/xcusemecorto.wav" id="15_fwe13"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_pkg7o"]
 
 [node name="World-TEST" type="Node3D"]
 script = ExtResource("1_dg8ay")
+
+[node name="GridMap" parent="." instance=ExtResource("6_1cil2")]
+collision_layer = 3
+data = {
+"cells": PackedInt32Array(0, 0, 1, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 5, 1, 1441792, 5, 2, 1441792, 5, 3, 1441792, 5, 4, 1441792, 0, 5, 1, 0, 4, 1, 0, 3, 1, 0, 2, 1, 0, 1, 1, 2, 1, 1441792, 4, 1, 1441792, 4, 3, 1441792, 3, 4, 1441792, 2, 4, 1441792, 1, 4, 1441792, 1, 3, 1441792, 1, 2, 1441792, 2, 2, 1441792, 3, 3, 1441792, 6, 0, 1, 6, 1, 1441792, 6, 2, 1441792, 6, 3, 1441792, 6, 4, 1441792, 0, 6, 1, 7, 0, 1, 7, 1, 1441793, 7, 2, 1441793, 7, 3, 1, 7, 4, 1, 7, 6, 1, 7, 7, 1, 6, 7, 1, 5, 7, 1, 4, 7, 1, 3, 7, 1, 2, 7, 1, 1, 7, 1, 0, 7, 1, 2, 3, 1441792, 4, 4, 1441792, 3, 1, 1441792, 3, 2, 1441792, 4, 2, 1441792, 7, 5, 1, 6, 5, 1441792, 5, 5, 1441792, 4, 5, 1441792, 3, 5, 1441792, 2, 5, 1441792, 1, 5, 1441792, 6, 6, 1441792, 5, 6, 1441792, 4, 6, 1441792, 3, 6, 1441792, 2, 6, 1441792, 1, 6, 1441792, 1, 1, 1441792, 65534, 7, 1179648)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Timer" type="Timer" parent="."]
 
@@ -111,13 +119,6 @@ layout_mode = 2
 texture = ExtResource("3_r7sxo")
 expand_mode = 1
 
-[node name="GridMap" parent="." instance=ExtResource("6_1cil2")]
-collision_layer = 3
-data = {
-"cells": PackedInt32Array(0, 0, 1, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 5, 1, 1441792, 5, 2, 1441792, 5, 3, 1441792, 5, 4, 1441792, 0, 5, 1, 0, 4, 1, 0, 3, 1, 0, 2, 1, 0, 1, 1, 2, 1, 1441792, 4, 1, 1441792, 4, 3, 1441792, 3, 4, 1441792, 2, 4, 1441792, 1, 4, 1441792, 1, 3, 1441792, 1, 2, 1441792, 2, 2, 1441792, 3, 3, 1441792, 6, 0, 1, 6, 1, 1441792, 6, 2, 1441792, 6, 3, 1441792, 6, 4, 1441792, 0, 6, 1, 7, 0, 1, 7, 1, 1441793, 7, 2, 1441793, 7, 3, 1, 7, 4, 1, 7, 6, 1, 7, 7, 1, 6, 7, 1, 5, 7, 1, 4, 7, 1, 3, 7, 1, 2, 7, 1, 1, 7, 1, 0, 7, 1, 2, 3, 1441792, 4, 4, 1441792, 3, 1, 1441792, 3, 2, 1441792, 4, 2, 1441792, 7, 5, 1, 6, 5, 1441792, 5, 5, 1441792, 4, 5, 1441792, 3, 5, 1441792, 2, 5, 1441792, 1, 5, 1441792, 6, 6, 1441792, 5, 6, 1441792, 4, 6, 1441792, 3, 6, 1441792, 2, 6, 1441792, 1, 6, 1441792, 1, 1, 1441792)
-}
-metadata/_editor_floor_ = Vector3(0, 0, 0)
-
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.889254, -0.175473, 0.422418, -0.154709, 0.753685, 0.638768, -0.430456, -0.633379, 0.64307, 8.617, 8.355, 12.47)
 attributes = SubResource("CameraAttributesPhysical_pkg7o")
@@ -160,10 +161,12 @@ stream = ExtResource("11_4dfx0")
 
 [node name="BgMusic" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("13_j5wr6")
-autoplay = true
 
 [node name="Talk" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("14_fwe13")
+
+[node name="Xcusemecorto" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("15_fwe13")
 
 [node name="Mobs" type="Node" parent="."]
 

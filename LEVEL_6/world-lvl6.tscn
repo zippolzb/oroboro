@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dcqayvp6jfmn4"]
+[gd_scene load_steps=18 format=3 uid="uid://dcqayvp6jfmn4"]
 
 [ext_resource type="Script" uid="uid://djwh4jnpm8hvc" path="res://LEVEL_6/world-lvl6.gd" id="1_lf0jk"]
 [ext_resource type="PackedScene" uid="uid://udw5oqijeqej" path="res://gui.tscn" id="2_vjmrh"]
@@ -13,10 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://bwbwmhfi05b6k" path="res://sfx/pasitos.wav" id="11_tw6xo"]
 [ext_resource type="AudioStream" uid="uid://d0eq6s017ux2m" path="res://sfx/agarra.wav" id="12_tuvr7"]
 [ext_resource type="AudioStream" uid="uid://bh6xxgiuevuhn" path="res://sfx/bg_music.mp3" id="13_3tua6"]
-[ext_resource type="AudioStream" uid="uid://drd2ikdrc0yus" path="res://sfx/talk.wav" id="14_f7gj4"]
+[ext_resource type="AudioStream" uid="uid://bxr2moct8yfm1" path="res://sfx/xcusemecorto.wav" id="14_jgkge"]
 [ext_resource type="PackedScene" uid="uid://l0j4yq68tkjk" path="res://mobs/skeleton.tscn" id="15_uguat"]
 [ext_resource type="PackedScene" uid="uid://03x0wgb8x00p" path="res://mobs/fanty.tscn" id="16_lf0jk"]
-[ext_resource type="Script" uid="uid://bciwjc1bqor0r" path="res://mobs/fanty.gd" id="17_xa82t"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_pkg7o"]
 
@@ -141,7 +140,6 @@ size = 9.944
 transform = Transform3D(0.523388, -0.845554, -0.105371, 0.0419975, -0.0979125, 0.994309, -0.851059, -0.524835, -0.0157351, 10, 10.3905, 10)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("7_3jfhi")]
-collision_mask = 1
 
 [node name="Starting-Mesas" type="Node" parent="."]
 
@@ -189,11 +187,13 @@ stream = ExtResource("13_3tua6")
 autoplay = true
 
 [node name="Talk" type="AudioStreamPlayer" parent="Sounds"]
-stream = ExtResource("14_f7gj4")
+stream = ExtResource("14_jgkge")
+
+[node name="Xcusemecorto" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("14_jgkge")
 
 [node name="Mobs" type="Node" parent="."]
 
 [node name="Skeleton" parent="Mobs" instance=ExtResource("15_uguat")]
 
 [node name="Fanty" parent="Mobs" instance=ExtResource("16_lf0jk")]
-script = ExtResource("17_xa82t")
