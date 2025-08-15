@@ -3,6 +3,11 @@ var dir = ''
 var speed = 8
 @onready var esqueleto_sound = $Node/Esqueleto
 
+@onready var anim_player = $Skeleton/AnimationPlayer
+
+func _ready() -> void:
+	anim_player.play('SkeletonIdleWalk_001')
+
 func hablar():
 	print("SOY UN ESQUELETO")
 
