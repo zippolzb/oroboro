@@ -2,6 +2,14 @@ extends CharacterBody3D
 var dir = ''
 var speed = 18900
 
+@onready var anim_player = $Ghost_main/AnimationPlayer
+@onready var anim_player2 = $"Ghost-trans/AnimationPlayer"
+
+func _ready() -> void:
+	anim_player.play('GhostIdle')
+	anim_player2.play('GhostIdle')
+	
+
 func traspasar(player, direccion):
 	self.collision_layer = 6
 	print(self)
