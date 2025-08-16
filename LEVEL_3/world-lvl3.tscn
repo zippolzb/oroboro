@@ -63,6 +63,18 @@ layout_mode = 2
 texture = ExtResource("4_0iln8")
 expand_mode = 1
 
+[node name="Label" type="Label" parent="GUI"]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 562.0
+offset_right = 425.0
+offset_bottom = 675.0
+theme_override_font_sizes/font_size = 25
+text = "SAME ACTIONS IN THE SAME ORDER
+SAME ACTIONS IN THE SAME ORDER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="GridMap" parent="." instance=ExtResource("5_jnk0t")]
 collision_layer = 3
 data = {

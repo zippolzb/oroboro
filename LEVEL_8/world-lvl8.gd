@@ -1,6 +1,6 @@
 extends Node3D
 @onready var player = $CharacterBody3D
-@onready var next_level = 'res://LEVEL_5/world-lvl5.tscn'
+@onready var next_level = 'res://LEVEL_9/world-lvl9.tscn'
 @onready var bg_sound = $"../Sounds/BgMusic"
 # STARTING PLAYER AND ITEMS
 @onready var starting_items = [
@@ -18,7 +18,7 @@ extends Node3D
 	{'node_name': 'Mesa', 'node': $Walls/Mesa3, 'pos': Vector3(2,1.25,6)},
 	{'node_name': 'Mesa', 'node': $Walls/Mesa4, 'pos': Vector3(3,1.25,5)},
 	{'node_name': 'Mesa', 'node': $Walls/Mesa5, 'pos': Vector3(4,1.25,5)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa6, 'pos': Vector3(1,1.25,4)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa6, 'pos': Vector3(1,1.25,3)},
 
 
 ]

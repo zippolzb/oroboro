@@ -4,6 +4,7 @@ var speed = 18900
 
 @onready var anim_player = $Ghost_main/AnimationPlayer
 @onready var anim_player2 = $"Ghost-trans/AnimationPlayer"
+@onready var audio = $AudioStreamPlayer2D
 
 func _ready() -> void:
 	anim_player.play('GhostIdle')
@@ -18,6 +19,7 @@ func traspasar(player, direccion):
 	player.gui.move_loop()
 	player.level.checkLoop(direccion)
 	player.set_grid_position(player.last_pos + player.direccion_dict[direccion])
+	audio.play()
 
 func empujar(player, direccion):
 	var direcciones = {'D': Vector3(0,0,1), 'U': Vector3(0,0,-1), 'R': Vector3(1,0,0), 'L': Vector3(-1,0,0) }

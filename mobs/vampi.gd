@@ -3,6 +3,8 @@ var dir = ''
 var speed = 18900
 
 @onready var anim_player = $Vampire/AnimationPlayer
+@onready var audio_laugh = $AudioLaugh
+@onready var audio_repelled = $AudioRepelled
 
 func _ready() -> void:
 	anim_player.play('VampireWalkGR')
@@ -11,10 +13,11 @@ func empujar(player, direccion):
 	var vampi_pos = self.global_position + direcciones[direccion]
 	var player_pos = self.global_position
 	if player.inventory == 'Cruz':
-		if check_if_occupied(vampi_pos):
+		if check_if_occupied(vampi_pos):		
 			player.set_grid_position(player.last_pos)
 		else:
 			global_position = vampi_pos
+			audio_repelled.play()
 			player.global_position = player_pos
 	else:
 		player.set_grid_position(player.last_pos)
@@ -29,6 +32,7 @@ func mover(player, direccion):
 		else:
 			global_position = vampi_pos
 	else:
+		audio_laugh.play()
 		print("NO JODAS!")
 
 func check_if_occupied(pos: Vector3):

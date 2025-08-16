@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://03x0wgb8x00p"]
+[gd_scene load_steps=9 format=3 uid="uid://03x0wgb8x00p"]
 
 [ext_resource type="Script" uid="uid://bciwjc1bqor0r" path="res://mobs/fanty.gd" id="1_clb2n"]
 [ext_resource type="PackedScene" uid="uid://bdpicbnm2gup4" path="res://Assets_Final/Skeleton.glb" id="2_m6tj1"]
 [ext_resource type="PackedScene" uid="uid://1ogac70ijfji" path="res://mobs/Ghost.glb" id="3_b1lax"]
 [ext_resource type="PackedScene" uid="uid://crxg4x00gtn1a" path="res://ghost_skin.tscn" id="4_mu7kr"]
+[ext_resource type="AudioStream" uid="uid://dg4cno1uiomin" path="res://sfx/ghost atravesado.wav" id="5_mu7kr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ysy4"]
 transparency = 1
@@ -40,3 +41,6 @@ shape = SubResource("BoxShape3D_5ysy4")
 
 [node name="Ghost-trans" parent="." instance=ExtResource("4_mu7kr")]
 visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_mu7kr")

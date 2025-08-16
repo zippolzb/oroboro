@@ -1,9 +1,10 @@
 [gd_resource type="MeshLibrary" load_steps=13 format=3 uid="uid://dt7tf6lxcunqw"]
 
-[ext_resource type="Texture2D" uid="uid://dlkmm7ffcn8f5" path="res://Assets_Final/texturita_gris.png" id="1_lq2wl"]
+[ext_resource type="Texture2D" uid="uid://c4rab06cl6a5b" path="res://tileset/texture_tile_versionfinal_v3.png" id="1_lq2wl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hs1au"]
 albedo_texture = ExtResource("1_lq2wl")
+uv1_scale = Vector3(6, 6, 6)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ohuxq"]
 _surfaces = [{
