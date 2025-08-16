@@ -1,8 +1,7 @@
 extends Node3D
 @onready var player = $CharacterBody3D
-@onready var next_level = "res://LEVEL_4/world-lv4.tscn"
+@onready var next_level = "res://LEVEL_4/world-lvl4.tscn"
 @onready var bg_sound = $"../Sounds/BgMusic"
-
 # STARTING PLAYER AND ITEMS
 @onready var starting_items = [
 	# ==== PLAYER ====
@@ -10,27 +9,23 @@ extends Node3D
 	# ==== ITEMS ====
 	{'node_name': 'Libro', 'node': $"Starting-Mesas/Mesa-Libro", 'pos': Vector3(4,1.25,4)},
 	{'node_name': 'Cabinet', 'node': $"Starting-Mesas/Mesa-Biblio", 'pos': Vector3(6,1.25,2)},
-	# ==== MOBS ====
-	{'node_name': 'Mob', 'node': $Mobs/Skeleton, 'pos': Vector3(5,0,3)},
 	# ==== WALLS ====
-	{'node_name': 'Mesa', 'node': $Walls/Mesa, 'pos': Vector3(4,1.25,6)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa2, 'pos': Vector3(4,1.25,5)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa3, 'pos': Vector3(6,1.25,6)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa, 'pos': Vector3(6,1.25,6)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa2, 'pos': Vector3(4,1.25,6)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa3, 'pos': Vector3(4,1.25,5)},
 	{'node_name': 'Mesa', 'node': $Walls/Mesa4, 'pos': Vector3(6,1.25,5)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa5, 'pos': Vector3(6,1.25,4)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa6, 'pos': Vector3(4,1.25,3)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa5, 'pos': Vector3(5,1.25,1)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa6, 'pos': Vector3(6,1.25,4)},
 	{'node_name': 'Mesa', 'node': $Walls/Mesa7, 'pos': Vector3(6,1.25,3)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa8, 'pos': Vector3(4,1.25,2)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa9, 'pos': Vector3(4,1.25,1)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa10, 'pos': Vector3(6,1.25,1)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa11, 'pos': Vector3(5,1.25,0)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa8, 'pos': Vector3(4,1.25,3)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa9, 'pos': Vector3(4,1.25,2)},
+
 ]
 # DEFINING LOOP
 @onready var level_loop_dict = [
 	{'node':$GUI/Move, 'type': 'Mover', 'image':'res://gui/move.png', 'used_image':'res://gui/move_used.png'},
 	{'node':$GUI/Move2, 'type': 'Mover', 'image':'res://gui/move.png', 'used_image':'res://gui/move_used.png'},
 	{'node':$GUI/Interact, 'type': 'Interactuar', 'image':'res://gui/interact.png', 'used_image':'res://gui/interact_used.png'},
-	{'node':$GUI/Speak, 'type': 'Hablar', 'image':'res://gui/speak.png', 'used_image':'res://gui/speak_used.png'},
 ]
 @onready var action_dict = {0: 'Mover', 1:'Interactuar', 2: 'Hablar'}
 var level_loop = []

@@ -1,6 +1,6 @@
 extends Node3D
 @onready var player = $CharacterBody3D
-@onready var next_level = "res://LEVEL_3/world-lv3.tscn"
+@onready var next_level = "res://LEVEL_3/world-lvl3.tscn"
 @onready var bg_sound = $"../Sounds/BgMusic"
 # STARTING PLAYER AND ITEMS
 @onready var starting_items = [

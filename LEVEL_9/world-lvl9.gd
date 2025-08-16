@@ -1,30 +1,32 @@
 extends Node3D
 @onready var player = $CharacterBody3D
-@onready var next_level = "res://LEVEL_6/world-lvl6.tscn"
+@onready var next_level = 'res://LEVEL_11/world-lvl11.tscn'
 @onready var bg_sound = $"../Sounds/BgMusic"
 
 # STARTING PLAYER AND ITEMS
 @onready var starting_items = [
 	# ==== PLAYER ====
-	{'node_name': 'Player', 'node': $CharacterBody3D, 'pos': Vector3(5,1.25,6)},
+	{'node_name': 'Player', 'node': $CharacterBody3D, 'pos': Vector3(4,1.25,6)},
 	# ==== ITEMS ====
-	{'node_name': 'Libro', 'node': $"Starting-Mesas/Mesa-Libro", 'pos': Vector3(3,1.25,5)},
-	{'node_name': 'Cabinet', 'node': $"Starting-Mesas/Mesa-Biblio", 'pos': Vector3(3,1.25,3)},
+	{'node_name': 'Libro', 'node': $"Starting-Mesas/Mesa-Libro", 'pos': Vector3(4,1.25,2)},
+	{'node_name': 'Cabinet', 'node': $"Starting-Mesas/Mesa-Biblio", 'pos': Vector3(1,1.25,4)},
+	# ==== MOBS ====
+	{'node_name': 'Mob-Fanty', 'node': $Mobs/Fanty, 'pos': Vector3(4,0.5,4)},
 	# ==== WALLS ====
-	{'node_name': 'Mesa', 'node': $Walls/Mesa, 'pos': Vector3(6,1.25,1)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa2, 'pos': Vector3(2,1.25,1)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa3, 'pos': Vector3(3,1.25,1)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa4, 'pos': Vector3(4,1.25,1)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa5, 'pos': Vector3(5,1.25,1)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa6, 'pos': Vector3(2,1.25,3)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa7, 'pos': Vector3(4,1.25,3)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa8, 'pos': Vector3(3,1.25,4)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa9, 'pos': Vector3(4,1.25,5)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa10, 'pos': Vector3(6,1.25,4)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa11, 'pos': Vector3(6,1.25,6)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa, 'pos': Vector3(3,1.25,6)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa2, 'pos': Vector3(3,1.25,5)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa3, 'pos': Vector3(2,1.25,5)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa4, 'pos': Vector3(2,1.25,3)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa5, 'pos': Vector3(3,1.25,3)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa6, 'pos': Vector3(5,1.25,3)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa7, 'pos': Vector3(5,1.25,4)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa8, 'pos': Vector3(5,1.25,5)},
+	{'node_name': 'Mesa', 'node': $Walls/Mesa9, 'pos': Vector3(5,1.25,6)},
+	
+
 ]
 # DEFINING LOOP
-@onready var level_loop_dict = [
+@onready var level_loop_dict = [	
 	{'node':$GUI/Move, 'type': 'Mover', 'image':'res://gui/move.png', 'used_image':'res://gui/move_used.png'},
 	{'node':$GUI/Move2, 'type': 'Mover', 'image':'res://gui/move.png', 'used_image':'res://gui/move_used.png'},
 	{'node':$GUI/Move3, 'type': 'Mover', 'image':'res://gui/move.png', 'used_image':'res://gui/move_used.png'},

@@ -1,0 +1,199 @@
+[gd_scene load_steps=18 format=3 uid="uid://dcqayvp6jfmn4"]
+
+[ext_resource type="Script" uid="uid://djwh4jnpm8hvc" path="res://LEVEL_11/world-lvl11.gd" id="1_7uw4c"]
+[ext_resource type="PackedScene" uid="uid://udw5oqijeqej" path="res://gui.tscn" id="2_x5pji"]
+[ext_resource type="Texture2D" uid="uid://bpa4bsc7eq23e" path="res://gui/move.png" id="3_42qhv"]
+[ext_resource type="Texture2D" uid="uid://7efn4khg8cci" path="res://gui/interact.png" id="4_7hnjo"]
+[ext_resource type="Texture2D" uid="uid://we68ap6maa8k" path="res://gui/speak.png" id="5_qjgqe"]
+[ext_resource type="PackedScene" uid="uid://ccfkp1j5ix6ru" path="res://grid_map.tscn" id="6_eh2mb"]
+[ext_resource type="PackedScene" uid="uid://b1ffio6sht8ks" path="res://character_body_3d.tscn" id="7_6ihys"]
+[ext_resource type="PackedScene" uid="uid://1rq02n6fqmcp" path="res://mesa.tscn" id="8_f8y7a"]
+[ext_resource type="AudioStream" uid="uid://8ik1q754b4i" path="res://sfx/game_over.wav" id="9_mi05e"]
+[ext_resource type="AudioStream" uid="uid://rrhw6kh0vcag" path="res://sfx/victory.wav" id="10_6w3h7"]
+[ext_resource type="AudioStream" uid="uid://bwbwmhfi05b6k" path="res://sfx/pasitos.wav" id="11_m7y8h"]
+[ext_resource type="AudioStream" uid="uid://d0eq6s017ux2m" path="res://sfx/agarra.wav" id="12_dpk3k"]
+[ext_resource type="AudioStream" uid="uid://bh6xxgiuevuhn" path="res://sfx/bg_music.mp3" id="13_dciac"]
+[ext_resource type="AudioStream" uid="uid://bxr2moct8yfm1" path="res://sfx/xcusemecorto.wav" id="14_gs8d6"]
+[ext_resource type="PackedScene" uid="uid://l0j4yq68tkjk" path="res://mobs/skeleton.tscn" id="15_xgr8o"]
+[ext_resource type="PackedScene" uid="uid://03x0wgb8x00p" path="res://mobs/fanty.tscn" id="16_fx8wm"]
+
+[sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_pkg7o"]
+
+[node name="World-lvl6" type="Node3D"]
+script = ExtResource("1_7uw4c")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="GUI" parent="." instance=ExtResource("2_x5pji")]
+offset_left = 20.301
+offset_top = 31.9334
+offset_right = 60.301
+offset_bottom = 71.9334
+
+[node name="Move" type="MarginContainer" parent="GUI"]
+layout_mode = 0
+offset_left = -20.301
+offset_top = -31.9334
+offset_right = 19.699
+offset_bottom = 8.0666
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Move"]
+layout_mode = 2
+texture = ExtResource("3_42qhv")
+expand_mode = 1
+
+[node name="Interact" type="MarginContainer" parent="GUI"]
+layout_mode = 2
+offset_left = -20.301
+offset_top = -31.9334
+offset_right = 19.699
+offset_bottom = 8.0666
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Interact"]
+layout_mode = 2
+texture = ExtResource("4_7hnjo")
+expand_mode = 1
+
+[node name="Speak" type="MarginContainer" parent="GUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Speak"]
+layout_mode = 2
+texture = ExtResource("5_qjgqe")
+expand_mode = 1
+
+[node name="Move2" type="MarginContainer" parent="GUI"]
+layout_mode = 0
+offset_left = -20.301
+offset_top = -31.9334
+offset_right = 19.699
+offset_bottom = 8.0666
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Move2"]
+layout_mode = 2
+texture = ExtResource("3_42qhv")
+expand_mode = 1
+
+[node name="Move3" type="MarginContainer" parent="GUI"]
+layout_mode = 0
+offset_left = -20.301
+offset_top = -31.9334
+offset_right = 19.699
+offset_bottom = 8.0666
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Move3"]
+layout_mode = 2
+texture = ExtResource("3_42qhv")
+expand_mode = 1
+
+[node name="Move4" type="MarginContainer" parent="GUI"]
+layout_mode = 0
+offset_left = -20.301
+offset_top = -31.9334
+offset_right = 19.699
+offset_bottom = 8.0666
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Move4"]
+layout_mode = 2
+texture = ExtResource("3_42qhv")
+expand_mode = 1
+
+[node name="Move5" type="MarginContainer" parent="GUI"]
+layout_mode = 0
+offset_left = -20.301
+offset_top = -31.9334
+offset_right = 19.699
+offset_bottom = 8.0666
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Move5"]
+layout_mode = 2
+texture = ExtResource("3_42qhv")
+expand_mode = 1
+
+[node name="Move6" type="MarginContainer" parent="GUI"]
+layout_mode = 0
+offset_left = -20.301
+offset_top = -31.9334
+offset_right = 19.699
+offset_bottom = 8.0666
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Move6"]
+layout_mode = 2
+texture = ExtResource("3_42qhv")
+expand_mode = 1
+
+[node name="GridMap" parent="." instance=ExtResource("6_eh2mb")]
+collision_layer = 3
+data = {
+"cells": PackedInt32Array(0, 0, 1, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 5, 1, 1441792, 5, 2, 1441792, 5, 3, 1441792, 5, 4, 1441792, 0, 5, 1, 0, 4, 1, 0, 3, 1, 0, 2, 1, 0, 1, 1, 2, 1, 1441792, 4, 1, 1441792, 4, 3, 1441792, 3, 4, 1441792, 2, 4, 1441792, 1, 4, 1441792, 1, 3, 1441792, 1, 2, 1441792, 2, 2, 1441792, 3, 3, 1441792, 6, 0, 1, 6, 1, 1441792, 6, 2, 1441792, 6, 3, 1441792, 6, 4, 1441792, 0, 6, 1, 7, 0, 1, 7, 1, 1441793, 7, 2, 1441793, 7, 3, 1, 7, 4, 1, 7, 6, 1, 7, 7, 1, 6, 7, 1, 5, 7, 1, 4, 7, 1, 3, 7, 1, 2, 7, 1, 1, 7, 1, 0, 7, 1, 2, 3, 1441792, 4, 4, 1441792, 3, 1, 1441792, 3, 2, 1441792, 4, 2, 1441792, 7, 5, 1, 6, 5, 1441792, 5, 5, 1441792, 4, 5, 1441792, 3, 5, 1441792, 2, 5, 1441792, 1, 5, 1441792, 6, 6, 1441792, 5, 6, 1441792, 4, 6, 1441792, 3, 6, 1441792, 2, 6, 1441792, 1, 6, 1441792, 1, 1, 1441792)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.889254, -0.175473, 0.422418, -0.154709, 0.753685, 0.638768, -0.430456, -0.633379, 0.64307, 8.617, 8.355, 12.47)
+attributes = SubResource("CameraAttributesPhysical_pkg7o")
+size = 9.944
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.523388, -0.845554, -0.105371, 0.0419975, -0.0979125, 0.994309, -0.851059, -0.524835, -0.0157351, 10, 10.3905, 10)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("7_6ihys")]
+
+[node name="Starting-Mesas" type="Node" parent="."]
+
+[node name="Mesa-Libro" parent="Starting-Mesas" instance=ExtResource("8_f8y7a")]
+collision_layer = 15
+
+[node name="Mesa-Biblio" parent="Starting-Mesas" instance=ExtResource("8_f8y7a")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.28018, 0.93017, 2.72113)
+collision_layer = 13
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="Mesa" parent="Walls" instance=ExtResource("8_f8y7a")]
+
+[node name="Mesa2" parent="Walls" instance=ExtResource("8_f8y7a")]
+
+[node name="Mesa3" parent="Walls" instance=ExtResource("8_f8y7a")]
+
+[node name="Mesa4" parent="Walls" instance=ExtResource("8_f8y7a")]
+
+[node name="Mesa5" parent="Walls" instance=ExtResource("8_f8y7a")]
+
+[node name="Mesa6" parent="Walls" instance=ExtResource("8_f8y7a")]
+
+[node name="Mesa7" parent="Walls" instance=ExtResource("8_f8y7a")]
+
+[node name="Mesa8" parent="Walls" instance=ExtResource("8_f8y7a")]
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="GameOver" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("9_mi05e")
+
+[node name="Victory" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("10_6w3h7")
+
+[node name="Pasitos" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("11_m7y8h")
+
+[node name="Agarra" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("12_dpk3k")
+
+[node name="BgMusic" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("13_dciac")
+autoplay = true
+
+[node name="Talk" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("14_gs8d6")
+
+[node name="Xcusemecorto" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("14_gs8d6")
+
+[node name="Mobs" type="Node" parent="."]
+
+[node name="Skeleton" parent="Mobs" instance=ExtResource("15_xgr8o")]
+
+[node name="Fanty" parent="Mobs" instance=ExtResource("16_fx8wm")]
