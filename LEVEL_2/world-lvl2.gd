@@ -10,11 +10,10 @@ extends Node3D
 	{'node_name': 'Libro', 'node': $"Starting-Mesas/Mesa-Libro", 'pos': Vector3(5,1.25,3)},
 	{'node_name': 'Cabinet', 'node': $"Starting-Mesas/Mesa-Biblio", 'pos': Vector3(6,1.25,4)},
 	# ==== WALLS ====
-	{'node_name': 'Mesa', 'node': $Walls/Mesa, 'pos': Vector3(6,1.25,6)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa2, 'pos': Vector3(4,1.25,6)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa3, 'pos': Vector3(4,1.25,5)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa4, 'pos': Vector3(6,1.25,5)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa5, 'pos': Vector3(4,1.25,4)},
+	{'node_name': 'Mesa', 'node': $Obstacles/Planter, 'pos': Vector3(6,1.25,5.5)},
+	{'node_name': 'Mesa', 'node': $Obstacles/Trashcan, 'pos': Vector3(4,1.25,6)},
+	{'node_name': 'Mesa', 'node': $Obstacles/Watercooler, 'pos': Vector3(4,1.25,5)},
+	{'node_name': 'Mesa', 'node': $Obstacles/Cubicle, 'pos': Vector3(4,1.25,4)},
 ]
 # DEFINING LOOP
 @onready var level_loop_dict = [

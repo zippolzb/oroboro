@@ -13,12 +13,12 @@ extends Node3D
 	{'node_name': 'Mob', 'node': $Mobs/Skeleton, 'pos': Vector3(3,0,1)},
 	{'node_name': 'Mob', 'node': $Mobs/Skeleton2, 'pos': Vector3(4,0,4)},
 	# ==== WALLS ====
-	{'node_name': 'Mesa', 'node': $Walls/Mesa, 'pos': Vector3(1,1.25,1)},
+	{'node_name': 'Mesa', 'node': $Obstacles/Carn_Plant, 'pos': Vector3(1,1.25,1)},
 	{'node_name': 'Mesa', 'node': $Walls/Mesa2, 'pos': Vector3(3,1.25,2)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa3, 'pos': Vector3(2,1.25,6)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa4, 'pos': Vector3(3,1.25,5)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa5, 'pos': Vector3(4,1.25,5)},
-	{'node_name': 'Mesa', 'node': $Walls/Mesa6, 'pos': Vector3(1,1.25,3)},
+	{'node_name': 'Mesa', 'node': $Obstacles/Cubicle, 'pos': Vector3(2,1.25,6)},
+	{'node_name': 'Mesa', 'node': $Obstacles/Cubicle2, 'pos': Vector3(3,1.25,5)},
+	{'node_name': 'Mesa', 'node': $Obstacles/Cubicle3, 'pos': Vector3(4,1.25,5)},
+	{'node_name': 'Mesa', 'node': $Obstacles/Trashcan, 'pos': Vector3(1,1.25,3)},
 
 
 ]

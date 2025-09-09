@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf0im5hvk58qd"
 path.s3tc="res://.godot/imported/Ghost_GMTK2025 - TEXTURE - COLORS ALBEDO.png-31b96d48a15494e17db2b48ac069ddb7.s3tc.ctex"
+path.etc2="res://.godot/imported/Ghost_GMTK2025 - TEXTURE - COLORS ALBEDO.png-31b96d48a15494e17db2b48ac069ddb7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://mobs/Ghost_GMTK2025 - TEXTURE - COLORS ALBEDO.png"
-dest_files=["res://.godot/imported/Ghost_GMTK2025 - TEXTURE - COLORS ALBEDO.png-31b96d48a15494e17db2b48ac069ddb7.s3tc.ctex"]
+dest_files=["res://.godot/imported/Ghost_GMTK2025 - TEXTURE - COLORS ALBEDO.png-31b96d48a15494e17db2b48ac069ddb7.s3tc.ctex", "res://.godot/imported/Ghost_GMTK2025 - TEXTURE - COLORS ALBEDO.png-31b96d48a15494e17db2b48ac069ddb7.etc2.ctex"]
 
 [params]
 

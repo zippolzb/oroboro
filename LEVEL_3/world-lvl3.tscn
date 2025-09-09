@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://wx4cknmgugra"]
+[gd_scene load_steps=29 format=3 uid="uid://wx4cknmgugra"]
 
 [ext_resource type="Script" uid="uid://bh0i1bbevgbux" path="res://LEVEL_3/world-lvl3.gd" id="1_t8hck"]
 [ext_resource type="PackedScene" uid="uid://udw5oqijeqej" path="res://gui.tscn" id="2_ihscx"]
 [ext_resource type="Texture2D" uid="uid://bpa4bsc7eq23e" path="res://gui/move.png" id="3_loymr"]
 [ext_resource type="Texture2D" uid="uid://7efn4khg8cci" path="res://gui/interact.png" id="4_0iln8"]
+[ext_resource type="Texture2D" uid="uid://c3y6dfh5ic1wv" path="res://Post It/5f47fd68554fc70004db57d5.png" id="5_hrkwg"]
 [ext_resource type="PackedScene" uid="uid://ccfkp1j5ix6ru" path="res://grid_map.tscn" id="5_jnk0t"]
 [ext_resource type="PackedScene" uid="uid://b1ffio6sht8ks" path="res://character_body_3d.tscn" id="6_7360d"]
 [ext_resource type="PackedScene" uid="uid://1rq02n6fqmcp" path="res://mesa.tscn" id="7_bm3m1"]
@@ -13,8 +14,30 @@
 [ext_resource type="AudioStream" uid="uid://8ik1q754b4i" path="res://sfx/game_over.wav" id="11_ey78x"]
 [ext_resource type="AudioStream" uid="uid://bh6xxgiuevuhn" path="res://sfx/bg_music.mp3" id="12_nkoe3"]
 [ext_resource type="AudioStream" uid="uid://bxr2moct8yfm1" path="res://sfx/xcusemecorto.wav" id="13_dlysx"]
+[ext_resource type="PackedScene" uid="uid://b2ibhf50xh2v7" path="res://Assets_Final_FINAL/Objects/Cubicle.tscn" id="14_m45yg"]
+[ext_resource type="PackedScene" uid="uid://dlc5pjm48uimv" path="res://Assets_Final_FINAL/Objects/Watercooler.tscn" id="15_1qyow"]
+[ext_resource type="ArrayMesh" uid="uid://dvcrkq1ug4u80" path="res://Assets_Final_FINAL/Objects/Trashcan.obj" id="16_qqox0"]
+[ext_resource type="Material" uid="uid://7dvar4v8n004" path="res://Assets_Final/Main_Material.tres" id="17_hrkwg"]
+[ext_resource type="ArrayMesh" uid="uid://bomjtl5gtiy8h" path="res://Assets_Final_FINAL/Objects/Planter.obj" id="18_gp8qv"]
+[ext_resource type="ArrayMesh" uid="uid://287oiitvigly" path="res://Assets_Final_FINAL/Objects/Carn_Plant.obj" id="19_ma1sw"]
+[ext_resource type="PackedScene" uid="uid://7pb7tgk6e41t" path="res://Building/Door.glb" id="20_qqox0"]
+[ext_resource type="PackedScene" uid="uid://c7kie47o18e2i" path="res://Building/Window.glb" id="21_hrkwg"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_pkg7o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kb8iw"]
+size = Vector3(0.95, 1, 0.95)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t3lks"]
+size = Vector3(0.95, 1, 0.95)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mktgs"]
+size = Vector3(0.95, 1, 0.95)
+
+[sub_resource type="BoxMesh" id="BoxMesh_gp8qv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ma1sw"]
+diffuse_mode = 3
 
 [node name="World_lvl3" type="Node3D"]
 script = ExtResource("1_t8hck")
@@ -63,13 +86,19 @@ layout_mode = 2
 texture = ExtResource("4_0iln8")
 expand_mode = 1
 
-[node name="Label" type="Label" parent="GUI"]
-layout_mode = 0
-offset_left = -7.0
-offset_top = 562.0
-offset_right = 425.0
-offset_bottom = 675.0
-theme_override_font_sizes/font_size = 25
+[node name="Post It" type="Sprite2D" parent="GUI"]
+position = Vector2(142.699, 528.067)
+scale = Vector2(0.588764, 0.588764)
+texture = ExtResource("5_hrkwg")
+
+[node name="Label" type="Label" parent="GUI/Post It"]
+offset_left = -242.882
+offset_top = -27.1756
+offset_right = 189.118
+offset_bottom = 85.8244
+rotation = -0.161788
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
 text = "SAME ACTIONS IN THE SAME ORDER
 SAME ACTIONS IN THE SAME ORDER"
 horizontal_alignment = 1
@@ -83,7 +112,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.889254, -0.175473, 0.422418, -0.154709, 0.753685, 0.638768, -0.430456, -0.633379, 0.64307, 8.617, 8.355, 12.47)
+transform = Transform3D(0.88678, -0.231182, 0.40022, -0.121569, 0.71876, 0.684547, -0.445918, -0.655697, 0.609277, 8.539, 9.423, 13.075)
 attributes = SubResource("CameraAttributesPhysical_pkg7o")
 size = 9.944
 
@@ -104,22 +133,31 @@ collision_layer = 13
 [node name="Walls" type="Node" parent="."]
 
 [node name="Mesa" parent="Walls" instance=ExtResource("7_bm3m1")]
+visible = false
 
 [node name="Mesa2" parent="Walls" instance=ExtResource("7_bm3m1")]
+visible = false
 
 [node name="Mesa3" parent="Walls" instance=ExtResource("7_bm3m1")]
+visible = false
 
 [node name="Mesa4" parent="Walls" instance=ExtResource("7_bm3m1")]
+visible = false
 
 [node name="Mesa5" parent="Walls" instance=ExtResource("7_bm3m1")]
+visible = false
 
 [node name="Mesa6" parent="Walls" instance=ExtResource("7_bm3m1")]
+visible = false
 
 [node name="Mesa7" parent="Walls" instance=ExtResource("7_bm3m1")]
+visible = false
 
 [node name="Mesa8" parent="Walls" instance=ExtResource("7_bm3m1")]
+visible = false
 
 [node name="Mesa9" parent="Walls" instance=ExtResource("7_bm3m1")]
+visible = false
 
 [node name="Sounds" type="Node" parent="."]
 
@@ -143,3 +181,91 @@ autoplay = true
 stream = ExtResource("13_dlysx")
 
 [node name="Mobs" type="Node" parent="."]
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="Cubicle" parent="Obstacles" instance=ExtResource("14_m45yg")]
+
+[node name="Cubicle2" parent="Obstacles" instance=ExtResource("14_m45yg")]
+
+[node name="Cubicle3" parent="Obstacles" instance=ExtResource("14_m45yg")]
+
+[node name="Cubicle4" parent="Obstacles" instance=ExtResource("14_m45yg")]
+
+[node name="Cubicle5" parent="Obstacles" instance=ExtResource("14_m45yg")]
+
+[node name="Cubicle6" parent="Obstacles" instance=ExtResource("14_m45yg")]
+
+[node name="Cubicle7" parent="Obstacles" instance=ExtResource("14_m45yg")]
+
+[node name="Cubicle8" parent="Obstacles" instance=ExtResource("14_m45yg")]
+
+[node name="Cubicle9" parent="Obstacles" instance=ExtResource("14_m45yg")]
+
+[node name="Watercooler" parent="Obstacles" instance=ExtResource("15_1qyow")]
+visible = false
+
+[node name="Trashcan" type="RigidBody3D" parent="Obstacles"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Trashcan"]
+mesh = ExtResource("16_qqox0")
+surface_material_override/0 = ExtResource("17_hrkwg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Trashcan"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49979, 0)
+shape = SubResource("BoxShape3D_kb8iw")
+
+[node name="Planter" type="RigidBody3D" parent="Obstacles"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Planter"]
+mesh = ExtResource("18_gp8qv")
+surface_material_override/0 = ExtResource("17_hrkwg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Planter"]
+transform = Transform3D(1.375, 0, 0, 0, 1.375, 0, 0, 0, 1.375, 0, 0.49979, 0)
+shape = SubResource("BoxShape3D_t3lks")
+
+[node name="Carn_Plant" type="RigidBody3D" parent="Obstacles"]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Carn_Plant"]
+mesh = ExtResource("19_ma1sw")
+surface_material_override/0 = ExtResource("17_hrkwg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Carn_Plant"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49979, 0)
+shape = SubResource("BoxShape3D_mktgs")
+
+[node name="Building" type="Node" parent="."]
+
+[node name="Wall1" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(0.19996, 0, 0, 0, 1, 0, 0, 0, 8.21415, -0.0822216, 0.957358, 3.85152)
+mesh = SubResource("BoxMesh_gp8qv")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ma1sw")
+
+[node name="Wall2" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(-8.74051e-09, 0, -8.10728, 0, 1, 0, 0.19996, 0, -3.5438e-07, 3.94327, 0.957358, -0.147602)
+mesh = SubResource("BoxMesh_gp8qv")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ma1sw")
+
+[node name="Door2" parent="Building" instance=ExtResource("20_qqox0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47237, 0.50656, 0)
+
+[node name="Window2" parent="Building" instance=ExtResource("21_hrkwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0984053, 1.08391, 6.41171)
+
+[node name="Window3" parent="Building" instance=ExtResource("21_hrkwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0984053, 1.08391, 4.4536)
+
+[node name="Window4" parent="Building" instance=ExtResource("21_hrkwg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0984053, 1.08391, 2.36051)
+
+[node name="Window5" parent="Building" instance=ExtResource("21_hrkwg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.53344, 1.08391, 0.0190809)
+
+[node name="Window6" parent="Building" instance=ExtResource("21_hrkwg")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.32667, 1.08391, 0.0190809)

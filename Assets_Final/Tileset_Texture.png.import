@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjtp0escbriir"
 path.s3tc="res://.godot/imported/Tileset_Texture.png-0539bd263db698ce2444daa47d8e5c7d.s3tc.ctex"
+path.etc2="res://.godot/imported/Tileset_Texture.png-0539bd263db698ce2444daa47d8e5c7d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets_Final/Tileset_Texture.png"
-dest_files=["res://.godot/imported/Tileset_Texture.png-0539bd263db698ce2444daa47d8e5c7d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Tileset_Texture.png-0539bd263db698ce2444daa47d8e5c7d.s3tc.ctex", "res://.godot/imported/Tileset_Texture.png-0539bd263db698ce2444daa47d8e5c7d.etc2.ctex"]
 
 [params]
 

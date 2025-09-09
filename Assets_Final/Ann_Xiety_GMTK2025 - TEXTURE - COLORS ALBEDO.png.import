@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cf0iw0o7uvhhp"
 path.s3tc="res://.godot/imported/Ann_Xiety_GMTK2025 - TEXTURE - COLORS ALBEDO.png-95c45cf7780e168eb6b23f30a5810f2c.s3tc.ctex"
+path.etc2="res://.godot/imported/Ann_Xiety_GMTK2025 - TEXTURE - COLORS ALBEDO.png-95c45cf7780e168eb6b23f30a5810f2c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets_Final/Ann_Xiety_GMTK2025 - TEXTURE - COLORS ALBEDO.png"
-dest_files=["res://.godot/imported/Ann_Xiety_GMTK2025 - TEXTURE - COLORS ALBEDO.png-95c45cf7780e168eb6b23f30a5810f2c.s3tc.ctex"]
+dest_files=["res://.godot/imported/Ann_Xiety_GMTK2025 - TEXTURE - COLORS ALBEDO.png-95c45cf7780e168eb6b23f30a5810f2c.s3tc.ctex", "res://.godot/imported/Ann_Xiety_GMTK2025 - TEXTURE - COLORS ALBEDO.png-95c45cf7780e168eb6b23f30a5810f2c.etc2.ctex"]
 
 [params]
 

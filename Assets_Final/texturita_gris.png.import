@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlkmm7ffcn8f5"
 path.s3tc="res://.godot/imported/texturita_gris.png-670f4be86b07a1e3b36f133a099b76df.s3tc.ctex"
+path.etc2="res://.godot/imported/texturita_gris.png-670f4be86b07a1e3b36f133a099b76df.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets_Final/texturita_gris.png"
-dest_files=["res://.godot/imported/texturita_gris.png-670f4be86b07a1e3b36f133a099b76df.s3tc.ctex"]
+dest_files=["res://.godot/imported/texturita_gris.png-670f4be86b07a1e3b36f133a099b76df.s3tc.ctex", "res://.godot/imported/texturita_gris.png-670f4be86b07a1e3b36f133a099b76df.etc2.ctex"]
 
 [params]
 

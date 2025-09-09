@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://cju07qbcmmj3w"]
+[gd_scene load_steps=27 format=3 uid="uid://cju07qbcmmj3w"]
 
 [ext_resource type="Script" uid="uid://hwf1cs0ggaof" path="res://LEVEL_13/world-lvl13.gd" id="1_cde2c"]
 [ext_resource type="PackedScene" uid="uid://udw5oqijeqej" path="res://gui.tscn" id="2_gq6q7"]
 [ext_resource type="Texture2D" uid="uid://bpa4bsc7eq23e" path="res://gui/move.png" id="3_p0q02"]
 [ext_resource type="Texture2D" uid="uid://7efn4khg8cci" path="res://gui/interact.png" id="4_sikph"]
 [ext_resource type="PackedScene" uid="uid://ccfkp1j5ix6ru" path="res://grid_map.tscn" id="5_eotcl"]
+[ext_resource type="Texture2D" uid="uid://c3y6dfh5ic1wv" path="res://Post It/5f47fd68554fc70004db57d5.png" id="5_tllpl"]
 [ext_resource type="PackedScene" uid="uid://b1ffio6sht8ks" path="res://character_body_3d.tscn" id="6_ni4il"]
 [ext_resource type="PackedScene" uid="uid://1rq02n6fqmcp" path="res://mesa.tscn" id="7_ert68"]
 [ext_resource type="AudioStream" uid="uid://8ik1q754b4i" path="res://sfx/game_over.wav" id="8_0urnv"]
@@ -15,8 +16,22 @@
 [ext_resource type="AudioStream" uid="uid://bxr2moct8yfm1" path="res://sfx/xcusemecorto.wav" id="13_f6jm3"]
 [ext_resource type="PackedScene" uid="uid://bkykxix32rfys" path="res://mobs/vampi.tscn" id="14_i2ium"]
 [ext_resource type="PackedScene" uid="uid://03x0wgb8x00p" path="res://mobs/fanty.tscn" id="15_el053"]
+[ext_resource type="PackedScene" uid="uid://b2ibhf50xh2v7" path="res://Assets_Final_FINAL/Objects/Cubicle.tscn" id="16_6vfov"]
+[ext_resource type="ArrayMesh" uid="uid://287oiitvigly" path="res://Assets_Final_FINAL/Objects/Carn_Plant.obj" id="17_uikxu"]
+[ext_resource type="Material" uid="uid://7dvar4v8n004" path="res://Assets_Final/Main_Material.tres" id="18_8ts71"]
+[ext_resource type="PackedScene" uid="uid://dlc5pjm48uimv" path="res://Assets_Final_FINAL/Objects/Watercooler.tscn" id="19_uikxu"]
+[ext_resource type="PackedScene" uid="uid://7pb7tgk6e41t" path="res://Building/Door.glb" id="20_jk2yw"]
+[ext_resource type="PackedScene" uid="uid://c7kie47o18e2i" path="res://Building/Window.glb" id="21_tllpl"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_pkg7o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jk2yw"]
+size = Vector3(0.95, 1, 0.95)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q1vto"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_inqod"]
+diffuse_mode = 3
 
 [node name="World-LVL7" type="Node3D"]
 script = ExtResource("1_cde2c")
@@ -77,13 +92,20 @@ layout_mode = 2
 texture = ExtResource("3_p0q02")
 expand_mode = 1
 
+[node name="Post It" type="Sprite2D" parent="GUI"]
+position = Vector2(142.699, 528.067)
+scale = Vector2(0.588764, 0.588764)
+texture = ExtResource("5_tllpl")
+
 [node name="Label" type="Label" parent="GUI"]
 layout_mode = 0
-offset_left = -7.0
-offset_top = 523.0
-offset_right = 326.0
-offset_bottom = 675.0
-theme_override_font_sizes/font_size = 25
+offset_left = -41.301
+offset_top = 469.067
+offset_right = 291.699
+offset_bottom = 621.067
+rotation = -0.143574
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
 text = "WHAT A DAY!
 THIS IS YOUR FINAL TASK."
 horizontal_alignment = 1
@@ -97,7 +119,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.889254, -0.175473, 0.422418, -0.154709, 0.753685, 0.638768, -0.430456, -0.633379, 0.64307, 8.617, 8.355, 12.47)
+transform = Transform3D(0.88678, -0.231182, 0.40022, -0.121569, 0.71876, 0.684547, -0.445918, -0.655697, 0.609277, 8.539, 9.423, 13.075)
 attributes = SubResource("CameraAttributesPhysical_pkg7o")
 size = 9.944
 
@@ -124,29 +146,11 @@ collision_layer = 15
 
 [node name="Mesa2" parent="Walls" instance=ExtResource("7_ert68")]
 
-[node name="Mesa3" parent="Walls" instance=ExtResource("7_ert68")]
-
-[node name="Mesa4" parent="Walls" instance=ExtResource("7_ert68")]
-
 [node name="Mesa5" parent="Walls" instance=ExtResource("7_ert68")]
 
 [node name="Mesa6" parent="Walls" instance=ExtResource("7_ert68")]
 
 [node name="Mesa7" parent="Walls" instance=ExtResource("7_ert68")]
-
-[node name="Mesa8" parent="Walls" instance=ExtResource("7_ert68")]
-
-[node name="Mesa9" parent="Walls" instance=ExtResource("7_ert68")]
-
-[node name="Mesa10" parent="Walls" instance=ExtResource("7_ert68")]
-
-[node name="Mesa11" parent="Walls" instance=ExtResource("7_ert68")]
-
-[node name="Mesa12" parent="Walls" instance=ExtResource("7_ert68")]
-
-[node name="Mesa13" parent="Walls" instance=ExtResource("7_ert68")]
-
-[node name="Mesa14" parent="Walls" instance=ExtResource("7_ert68")]
 
 [node name="Sounds" type="Node" parent="."]
 
@@ -177,3 +181,71 @@ stream = ExtResource("13_f6jm3")
 
 [node name="Fanty" parent="Mobs" instance=ExtResource("15_el053")]
 collision_layer = 6
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="Cubicle1" parent="Obstacles" instance=ExtResource("16_6vfov")]
+
+[node name="Cubicle3" parent="Obstacles" instance=ExtResource("16_6vfov")]
+
+[node name="Cubicle4" parent="Obstacles" instance=ExtResource("16_6vfov")]
+
+[node name="Cubicle7" parent="Obstacles" instance=ExtResource("16_6vfov")]
+
+[node name="Cubicle10" parent="Obstacles" instance=ExtResource("16_6vfov")]
+
+[node name="Carn_Plant" type="RigidBody3D" parent="Obstacles"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Carn_Plant"]
+mesh = ExtResource("17_uikxu")
+surface_material_override/0 = ExtResource("18_8ts71")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Carn_Plant"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49979, 0)
+shape = SubResource("BoxShape3D_jk2yw")
+
+[node name="Carn_Plant3" type="RigidBody3D" parent="Obstacles"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Obstacles/Carn_Plant3"]
+mesh = ExtResource("17_uikxu")
+surface_material_override/0 = ExtResource("18_8ts71")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacles/Carn_Plant3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49979, 0)
+shape = SubResource("BoxShape3D_jk2yw")
+
+[node name="Watercooler" parent="Obstacles" instance=ExtResource("19_uikxu")]
+
+[node name="Watercooler2" parent="Obstacles" instance=ExtResource("19_uikxu")]
+
+[node name="Building" type="Node" parent="."]
+
+[node name="Wall1" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(0.19996, 0, 0, 0, 1, 0, 0, 0, 8.21415, -0.0822216, 0.957358, 3.85152)
+mesh = SubResource("BoxMesh_q1vto")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_inqod")
+
+[node name="Wall2" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(-8.74051e-09, 0, -8.10728, 0, 1, 0, 0.19996, 0, -3.5438e-07, 3.94327, 0.957358, -0.147602)
+mesh = SubResource("BoxMesh_q1vto")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_inqod")
+
+[node name="Door2" parent="Building" instance=ExtResource("20_jk2yw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47237, 0.50656, 0)
+
+[node name="Window2" parent="Building" instance=ExtResource("21_tllpl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0984053, 1.08391, 6.41171)
+
+[node name="Window3" parent="Building" instance=ExtResource("21_tllpl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0984053, 1.08391, 4.4536)
+
+[node name="Window4" parent="Building" instance=ExtResource("21_tllpl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0984053, 1.08391, 2.36051)
+
+[node name="Window5" parent="Building" instance=ExtResource("21_tllpl")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.53344, 1.08391, 0.0190809)
+
+[node name="Window6" parent="Building" instance=ExtResource("21_tllpl")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.32667, 1.08391, 0.0190809)

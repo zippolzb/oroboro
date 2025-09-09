@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://06gc7v0ehnyn"]
+[gd_scene load_steps=22 format=3 uid="uid://06gc7v0ehnyn"]
 
 [ext_resource type="Script" uid="uid://mpjpe7x7nthm" path="res://LEVEL_9/world-lvl9.gd" id="1_iqlqa"]
 [ext_resource type="PackedScene" uid="uid://udw5oqijeqej" path="res://gui.tscn" id="2_blnih"]
 [ext_resource type="Texture2D" uid="uid://bpa4bsc7eq23e" path="res://gui/move.png" id="3_hjcna"]
 [ext_resource type="Texture2D" uid="uid://7efn4khg8cci" path="res://gui/interact.png" id="4_5pkgv"]
+[ext_resource type="Texture2D" uid="uid://dnamt7j0rwnuc" path="res://Tags/Ghost_Name_Tag.png" id="5_kylvn"]
 [ext_resource type="PackedScene" uid="uid://ccfkp1j5ix6ru" path="res://grid_map.tscn" id="6_2jcia"]
 [ext_resource type="PackedScene" uid="uid://b1ffio6sht8ks" path="res://character_body_3d.tscn" id="7_llvvo"]
 [ext_resource type="PackedScene" uid="uid://1rq02n6fqmcp" path="res://mesa.tscn" id="8_jcv72"]
@@ -13,9 +14,17 @@
 [ext_resource type="AudioStream" uid="uid://d0eq6s017ux2m" path="res://sfx/agarra.wav" id="12_r6j2o"]
 [ext_resource type="AudioStream" uid="uid://bh6xxgiuevuhn" path="res://sfx/bg_music.mp3" id="13_icxef"]
 [ext_resource type="AudioStream" uid="uid://bxr2moct8yfm1" path="res://sfx/xcusemecorto.wav" id="14_l66pl"]
+[ext_resource type="PackedScene" uid="uid://b2ibhf50xh2v7" path="res://Assets_Final_FINAL/Objects/Cubicle.tscn" id="15_cxton"]
 [ext_resource type="PackedScene" uid="uid://03x0wgb8x00p" path="res://mobs/fanty.tscn" id="16_oqst2"]
+[ext_resource type="PackedScene" uid="uid://7pb7tgk6e41t" path="res://Building/Door.glb" id="17_kylvn"]
+[ext_resource type="PackedScene" uid="uid://c7kie47o18e2i" path="res://Building/Window.glb" id="18_7g48a"]
 
 [sub_resource type="CameraAttributesPhysical" id="CameraAttributesPhysical_pkg7o"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_cxton"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccuef"]
+diffuse_mode = 3
 
 [node name="World-lvl9" type="Node3D"]
 script = ExtResource("1_iqlqa")
@@ -89,6 +98,7 @@ texture = ExtResource("3_hjcna")
 expand_mode = 1
 
 [node name="Label" type="Label" parent="GUI"]
+visible = false
 layout_mode = 0
 offset_left = -7.0
 offset_top = 523.0
@@ -100,6 +110,11 @@ BUT THEY CHILL YOUR BONES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="GhostNameTag" type="Sprite2D" parent="GUI"]
+position = Vector2(195.699, 553.067)
+scale = Vector2(0.2205, 0.2205)
+texture = ExtResource("5_kylvn")
+
 [node name="GridMap" parent="." instance=ExtResource("6_2jcia")]
 collision_layer = 3
 data = {
@@ -108,7 +123,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.889254, -0.175473, 0.422418, -0.154709, 0.753685, 0.638768, -0.430456, -0.633379, 0.64307, 8.617, 8.355, 12.47)
+transform = Transform3D(0.88678, -0.231182, 0.40022, -0.121569, 0.71876, 0.684547, -0.445918, -0.655697, 0.609277, 8.539, 9.423, 13.075)
 attributes = SubResource("CameraAttributesPhysical_pkg7o")
 size = 9.944
 
@@ -125,26 +140,6 @@ collision_layer = 15
 [node name="Mesa-Biblio" parent="Starting-Mesas" instance=ExtResource("8_jcv72")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.28018, 0.93017, 2.72113)
 collision_layer = 13
-
-[node name="Walls" type="Node" parent="."]
-
-[node name="Mesa" parent="Walls" instance=ExtResource("8_jcv72")]
-
-[node name="Mesa2" parent="Walls" instance=ExtResource("8_jcv72")]
-
-[node name="Mesa3" parent="Walls" instance=ExtResource("8_jcv72")]
-
-[node name="Mesa4" parent="Walls" instance=ExtResource("8_jcv72")]
-
-[node name="Mesa5" parent="Walls" instance=ExtResource("8_jcv72")]
-
-[node name="Mesa6" parent="Walls" instance=ExtResource("8_jcv72")]
-
-[node name="Mesa7" parent="Walls" instance=ExtResource("8_jcv72")]
-
-[node name="Mesa8" parent="Walls" instance=ExtResource("8_jcv72")]
-
-[node name="Mesa9" parent="Walls" instance=ExtResource("8_jcv72")]
 
 [node name="Sounds" type="Node" parent="."]
 
@@ -173,3 +168,55 @@ stream = ExtResource("14_l66pl")
 [node name="Mobs" type="Node" parent="."]
 
 [node name="Fanty" parent="Mobs" instance=ExtResource("16_oqst2")]
+
+[node name="Obstacles" type="Node" parent="."]
+
+[node name="Cubicle" parent="Obstacles" instance=ExtResource("15_cxton")]
+
+[node name="Cubicle2" parent="Obstacles" instance=ExtResource("15_cxton")]
+
+[node name="Cubicle3" parent="Obstacles" instance=ExtResource("15_cxton")]
+
+[node name="Cubicle4" parent="Obstacles" instance=ExtResource("15_cxton")]
+
+[node name="Cubicle5" parent="Obstacles" instance=ExtResource("15_cxton")]
+
+[node name="Cubicle6" parent="Obstacles" instance=ExtResource("15_cxton")]
+
+[node name="Cubicle7" parent="Obstacles" instance=ExtResource("15_cxton")]
+
+[node name="Cubicle8" parent="Obstacles" instance=ExtResource("15_cxton")]
+
+[node name="Cubicle9" parent="Obstacles" instance=ExtResource("15_cxton")]
+
+[node name="Building" type="Node" parent="."]
+
+[node name="Wall1" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(0.19996, 0, 0, 0, 1, 0, 0, 0, 8.21415, -0.0822216, 0.957358, 3.85152)
+mesh = SubResource("BoxMesh_cxton")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ccuef")
+
+[node name="Wall2" type="MeshInstance3D" parent="Building"]
+transform = Transform3D(-8.74051e-09, 0, -8.10728, 0, 1, 0, 0.19996, 0, -3.5438e-07, 3.94327, 0.957358, -0.147602)
+mesh = SubResource("BoxMesh_cxton")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_ccuef")
+
+[node name="Door2" parent="Building" instance=ExtResource("17_kylvn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.47237, 0.50656, 0)
+
+[node name="Window2" parent="Building" instance=ExtResource("18_7g48a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0984053, 1.08391, 6.41171)
+
+[node name="Window3" parent="Building" instance=ExtResource("18_7g48a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0984053, 1.08391, 4.4536)
+
+[node name="Window4" parent="Building" instance=ExtResource("18_7g48a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0984053, 1.08391, 2.36051)
+
+[node name="Window5" parent="Building" instance=ExtResource("18_7g48a")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.53344, 1.08391, 0.0190809)
+
+[node name="Window6" parent="Building" instance=ExtResource("18_7g48a")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.32667, 1.08391, 0.0190809)
